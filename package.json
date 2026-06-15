@@ -40,6 +40,7 @@
   },
   "scripts": {
     "prepare": "bash ./scripts/setup-dev-env.sh",
+    "build": "pnpm exec tsup --config ./configs/tsup.config.ts",
     "clean": "pnpm rimraf dist",
     "scan:secrets": "concurrently \"betterleaks protect --config ./configs/betterleaks.toml\" \"secretlint --secretlintrc ./configs/secretlint.config.yaml .\"",
     "check:sh": "bash templates/runners/run-shfmt.sh --list .",
