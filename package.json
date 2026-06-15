@@ -26,10 +26,10 @@
     "lint:text": "bash runners/run-textlint.sh ",
     "lint:markdown": "bash runners/run-markdownlint.sh ",
     "lint:gha": "pnpm run lint:gha:actions && pnpm run lint:gha:workflows",
-    "lint:gha:actions": "pnpm exec ghalint --config ./configs/ghalint.yaml run-action ",
-    "lint:gha:workflows": "bash ./scripts/lint-actionlint.sh && pnpm exec ghalint --config ./configs/ghalint.yaml run",
-    "lint:sh": "bash templates/runners/run-shellcheck.sh ",
-    "test:sh": "bash templates/runners/run-shellspec.sh ",
-    "test:sh:all": "bash templates/runners/run-shellspec.sh all"
+    "lint:gha:actions": "pnpm exec actionlint --config-file ./configs/actionlint.yaml ",
+    "lint:gha:workflows": "pnpm exec ghalint --config ./configs/ghalint.yaml run && pnpm exec ghalint --config ./configs/ghalint.yaml run-action",
+    "lint:sh": "bash ./runners/run-shellcheck.sh ",
+    "test:sh": "bash ./runners/run-shellspec.sh ",
+    "test:sh:all": "bash ./runners/run-shellspec.sh all"
   }
 }

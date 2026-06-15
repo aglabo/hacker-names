@@ -99,3 +99,12 @@ tmp/
 
 ## Node
 node_modules/
+
+# Beads / Dolt files (added by bd init)
+.beads/*
+!.beads/config.yaml
+!.beads/**.jsonl
+
+.dolt/
+*.db
+.beads-credential-key
