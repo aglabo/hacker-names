@@ -56,8 +56,7 @@
       "DOM"
     ],
     "types": [
-      "node",
-      "bun"
+      "node"
     ],
     // allow baseURL (suppress deprecation warning)
     "ignoreDeprecations": "6.0"
