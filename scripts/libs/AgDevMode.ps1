@@ -4,6 +4,8 @@
 # Copyright (c) 2026- Furukawa Atsushi <atsushifx@gmail.com>
 # Released under MIT License.
 
+# cspell:words devMode
+
 ## Constants
 Set-Variable -Name "DEVMODE_REGPATH" -Option Constant -Value "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock"
 Set-Variable -Name "DEVMODE_VALUE_NAME" -Option Constant -Value "AllowDevelopmentWithoutDevLicense"
