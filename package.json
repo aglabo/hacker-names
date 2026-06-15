@@ -1,19 +1,21 @@
 {
-  "name": "@aglabo/project-starter-template",
-  "version": "1.0.0",
-  "description": "Development environment for project-starter-template",
+  "name": "@aglabo/hacker-names",
+  "@(#)": "Hacker-style name generator library and CLI tool",
+  "version": "0.0.1",
+  "description": "Hacker-style name generator library and CLI tool",
   "private": true,
+  "type": "module",
   "keywords": [
-    "template",
-    "starter",
-    "oss",
-    "development"
+    "hacker",
+    "names",
+    "generator",
+    "cli"
   ],
   "author": "atsushifx",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atsushifx/project-starter-template.git"
+    "url": "https://github.com/aglabo/hacker-names.git"
   },
   "packageManager": "pnpm@11.6.0",
   "engines": {
@@ -40,7 +42,8 @@
   },
   "scripts": {
     "prepare": "bash ./scripts/setup-dev-env.sh",
-    "clean": "pnpm rimraf dist",
+    "build": "pnpm exec tsup --config ./configs/tsup.config.ts",
+    "clean": "pnpm rimraf dist module",
     "scan:secrets": "concurrently \"betterleaks protect --config ./configs/betterleaks.toml\" \"secretlint --secretlintrc ./configs/secretlint.config.yaml .\"",
     "check:sh": "bash templates/runners/run-shfmt.sh --list .",
     "check:types": "tsc --noEmit --incremental",
@@ -56,10 +59,10 @@
     "lint": "pnpm exec eslint --config ./configs/eslint.config.js --cache --cache-location .cache/eslint-cache/esLintCache ",
     "lint:types": "pnpm exec eslint --config ./configs/eslint.config.typed.js --cache --cache-location .cache/eslint-cache/esLintCacheTypes",
     "lint:filenames": "pnpm exec ls-lint --config ./configs/ls-lint.yaml ",
-    "test:all": "concurrently \"pnpm run test:develop\" \"pnpm run test:functional\" \"pnpm run test:ci\" \"pnpm run test:e2e\" ",
-    "test:develop": "pnpm exec vitest run --config ./configs/vitest.config.unit.ts",
+    "test:all": "concurrently \"pnpm run test:unit\" \"pnpm run test:functional\" \"pnpm run test:integration\" \"pnpm run test:e2e\" ",
+    "test:unit": "pnpm exec vitest run --config ./configs/vitest.config.unit.ts",
     "test:functional": "pnpm exec vitest run --config ./configs/vitest.config.functional.ts",
-    "test:ci": "pnpm exec vitest run --config ./configs/vitest.config.integration.ts",
+    "test:integration": "pnpm exec vitest run --config ./configs/vitest.config.integration.ts",
     "test:e2e": "pnpm exec vitest run --config ./configs/vitest.config.e2e.ts",
     "lint:sh": "bash ./runners/run-shellcheck.sh ",
     "test:sh": "bash ./runners/run-shellspec.sh ",

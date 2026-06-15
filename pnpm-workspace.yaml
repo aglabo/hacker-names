@@ -1,3 +1,13 @@
+# src: pnpm-workspace.yaml
+# @(#) : pnpm workspace config
+#
+# Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+# cspell:words unrs
+
 allowBuilds:
   esbuild: set this to true or false
   unrs-resolver: set this to true or false
