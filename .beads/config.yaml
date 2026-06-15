@@ -13,6 +13,7 @@ issue-prefix: "hn"
 # no-db: false
 no-db: true
 no-daemon: true
+
 # Enable JSON output by default
 # json: false
 
@@ -26,8 +27,6 @@ no-daemon: true
 actor: "atsushifx"
 repos:
   primary: "."
-  additional:
-    - "C:\\Users\\atsushifx\\workspaces\\develop\\hacker-names\\.beads"
 
 # Export events (audit trail) to .beads/events.jsonl on each flush/sync
 # When enabled, new events are appended incrementally using a high-water mark.
