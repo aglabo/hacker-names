@@ -60,6 +60,6 @@
       "bun"
     ],
     // allow baseURL (suppress deprecation warning)
-    "ignoreDeprecations": "5.0"
+    "ignoreDeprecations": "6.0"
   }
 }
