@@ -1,0 +1,65 @@
+// src: ./base/configs/tsconfig.base.json
+// @(#) : base TypeScript configuration for all packages
+//
+// Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+{
+  // --- files settings (set sub-packages)
+  // "include": []
+  // "exclude": [],
+  "exclude": [
+    ".git",
+    "dist",
+    "lib",
+    "maps",
+    "module",
+    "node_modules",
+    ".cache",
+    "temp",
+    "**/__tests__/**",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ],
+  // --- compile options
+  // src: ./base/configs/tsconfig.base.json
+  "compilerOptions": {
+    // ✅ strict mode
+    "alwaysStrict": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    // ✅ target, module, and module resolution
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    // ✅ type resolution and compatibility
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    // ✅ declaration files
+    "declaration": true,
+    "declarationMap": true,
+    // ✅ output
+    "sourceMap": false,
+    "outDir": "./dist",
+    "newLine": "LF",
+    "composite": false,
+    // ✅ incremental build
+    "incremental": true,
+    // ✅ standard libraries
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "types": [
+      "node",
+      "bun"
+    ],
+    // allow baseURL (suppress deprecation warning)
+    "ignoreDeprecations": "6.0"
+  }
+}
