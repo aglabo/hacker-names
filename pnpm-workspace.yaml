@@ -1,3 +1,8 @@
 allowBuilds:
-  esbuild: set this to true or false
-  unrs-resolver: set this to true or false
+  esbuild: false
+  unrs-resolver: false
+
+# Force-upgrade transitive esbuild (tsup 8.5.1 pins ^0.27.0) to fix GHSA-g7r4-m6w7-qqqr.
+# Applies tree-wide, including vite's esbuild. Remove once tsup ships esbuild >= 0.28.1.
+overrides:
+  esbuild: ^0.28.2

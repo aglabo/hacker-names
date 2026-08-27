@@ -41,7 +41,7 @@
   },
   "scripts": {
     "prepare": "bash ./scripts/setup-dev-env.sh",
-    "clean": "pnpm rimraf dist",
+    "clean:dist": "pnpm rimraf dist",
     "scan:secrets": "concurrently \"betterleaks protect --config ./configs/betterleaks.toml\" \"secretlint --secretlintrc ./configs/secretlint.config.yaml .\"",
     "check:sh": "bash templates/runners/run-shfmt.sh --list .",
     "check:types": "tsc --noEmit --incremental",
