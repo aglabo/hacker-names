@@ -1,4 +1,17 @@
 {
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bd prime --hook-json",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ]
+  },
   "permissions": {
     "allow": [
       "Bash(git status:*)",
@@ -19,6 +32,7 @@
       "Bash(pnpm:*)",
       "Read(docs/**)"
     ],
+    "defaultMode": "plan",
     "deny": [
       "Bash(git commit:*)",
       "Bash(git push:*)",
@@ -31,7 +45,6 @@
       "Bash(git switch:*)",
       "Bash(git stash:*)"
     ],
-    "defaultMode": "plan",
     "skipAutoPermissionPrompt": false
   }
 }

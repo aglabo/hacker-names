@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Development environment for project-starter-template",
   "private": true,
+  "type": "module",
   "keywords": [
     "template",
     "starter",
@@ -15,38 +16,39 @@
     "type": "git",
     "url": "https://github.com/atsushifx/project-starter-template.git"
   },
-  "packageManager": "pnpm@11.6.0",
+  "packageManager": "pnpm@11.24.0",
   "engines": {
     "node": ">=24",
-    "pnpm": ">=10"
+    "pnpm": ">=11"
   },
   "devDependencies": {
-    "@commitlint/types": "^21.0.1",
+    "@commitlint/types": "^21.2.0",
     "@eslint/js": "^10.0.1",
-    "@types/node": "^25.9.3",
-    "@typescript-eslint/eslint-plugin": "^8.61.0",
-    "@typescript-eslint/parser": "^8.61.0",
-    "esbuild": "^0.28.1",
-    "eslint": "^10.5.0",
+    "@types/node": "^25.9.5",
+    "@typescript-eslint/eslint-plugin": "^8.68.0",
+    "@typescript-eslint/parser": "^8.68.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.9.1",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import": "^2.32.0",
     "rimraf": "^6.1.3",
     "tsup": "^8.5.1",
-    "tsx": "^4.22.4",
+    "tsx": "^4.23.12",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.61.0",
+    "typescript-eslint": "^8.68.0",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.11"
   },
   "scripts": {
     "prepare": "bash ./scripts/setup-dev-env.sh",
-    "clean": "pnpm rimraf dist",
+    "clean:dist": "pnpm rimraf dist",
     "scan:secrets": "concurrently \"betterleaks protect --config ./configs/betterleaks.toml\" \"secretlint --secretlintrc ./configs/secretlint.config.yaml .\"",
     "check:sh": "bash templates/runners/run-shfmt.sh --list .",
     "check:types": "tsc --noEmit --incremental",
     "check:dprint": "dprint check",
     "format:dprint": "dprint fmt",
     "format:sh": "bash templates/runners/run-shfmt.sh --format .",
+
     "lint:spells": "cspell  --config .vscode/cspell.json --cache --cache-location .cache/cspell/cSpellCache ",
     "lint:text": "bash runners/run-textlint.sh ",
     "lint:markdown": "bash runners/run-markdownlint.sh ",
