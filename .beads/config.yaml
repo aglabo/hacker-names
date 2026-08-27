@@ -8,20 +8,21 @@
 
 # cspell:words myproject
 
+# cspell:words myproject
+
 # Issue prefix for this repository (used by bd init)
 # If not set, bd init will auto-detect from directory name
 # Example: issue-prefix: "myproject" creates issues like "myproject-1", "myproject-2", etc.
 # issue-prefix: ""
 issue-prefix: "hn"
 # Use no-db mode: JSONL-only, no Dolt database
-# When true, bd will use .beads/issues.jsonl as the source of truth
+# When true, .beads/issues.jsonl is the only local store# When true, .beads/issues.jsonl is the only local store
 # no-db: false
-no-db: true
+no-db: false
 no-daemon: true
-
 # Enable JSON output by default
 # json: false
-
+json: false
 # Feedback title formatting for mutating commands (create/update/close/dep/edit)
 # 0 = hide titles, N > 0 = truncate to N characters
 # output:
@@ -30,8 +31,12 @@ no-daemon: true
 # Default actor for audit trails (overridden by BEADS_ACTOR or --actor)
 # actor: ""
 actor: "atsushifx"
+sync:
+  remote: "git+https://github.com/aglabo/hacker-names.git"
 repos:
   primary: "."
+  additional:
+    - "C:\\Users\\atsushifx\\workspaces\\develop\\hacker-names\\.beads"
 
 # Export events (audit trail) to .beads/events.jsonl on each flush/sync
 # When enabled, new events are appended incrementally using a high-water mark.
@@ -55,12 +60,13 @@ repos:
 #   git-repo: ""       # Separate git repo for backups (default: project repo)
 
 # Integration settings (access with 'bd config get/set')
-# These are stored in the database, not in this file:
-# - jira.url
-# - jira.project
-# - linear.url
-# - linear.api-key
-# - github.org
-# - github.repo
+# Non-secret keys (stored in the database):
+# - jira.url, jira.project
+# - linear.team_id
+# - github.org, github.repo
+#
+# Secret keys (stored in this file but prefer env vars to avoid git exposure):
+# - linear.api_key  → use LINEAR_API_KEY env var instead
+# - github.token    → use GITHUB_TOKEN env var instead
 
-export.auto: false
+# sync.remote: "git+https://github.com/aglabo/hacker-names.git"
