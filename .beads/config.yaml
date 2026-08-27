@@ -35,8 +35,8 @@ sync:
   remote: "git+https://github.com/aglabo/hacker-names.git"
 repos:
   primary: "."
-  additional:
-    - "C:\\Users\\atsushifx\\workspaces\\develop\\hacker-names\\.beads"
+  # No additional repos: cross-machine sharing goes through sync.remote
+  # (bd dolt push / pull), not machine-local paths.
 
 # Export events (audit trail) to .beads/events.jsonl on each flush/sync
 # When enabled, new events are appended incrementally using a high-water mark.
