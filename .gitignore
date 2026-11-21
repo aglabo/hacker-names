@@ -6,13 +6,14 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-# default: ignore all files
+## ------------------------------------------------------------
+##   default: ignore all files
 *
 
 ## ---------------------------------------------------------------
 ##   General
 
-## General
+## Basic Documents
 # Allow README, LICENSE, CONTRIBUTING
 !**/README*
 !**/LICENSE*
@@ -98,7 +99,16 @@
 !.vscode/cspell*
 !.vscode/cspell*/**
 
+## ----------------------------------------------------------------
+##   Project Specific
 
+## source
+!src/
+!src/**/
+!src/**/*.ts
+!shared/
+!shared/**
+!shared/**/*.ts
 
 ## ---------------------------------------------------------------
 ##  Project specific
@@ -114,7 +124,6 @@
 ## ---------------------------------------------------------------
 ##  Re-exclude: secrets and generated files
 ##  Must stay last: these rules undo the broad allow rules above
-
 
 #   OS specific files
 .DS_Store
