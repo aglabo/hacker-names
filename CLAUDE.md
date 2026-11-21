@@ -2,6 +2,7 @@
 
 This file provides instructions and context for AI coding agents working on this project.
 
+<!-- markdownlint-disable -->
 <!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:46cd31e7 -->
 
 ## Beads Issue Tracker
@@ -70,10 +71,11 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 - If a required sync or push is blocked, stop and report the exact command and error.
 
 <!-- END BEADS INTEGRATION -->
+<!-- markdownlint-enable -->
 
 ## Build & Test
 
-*Add your build and test commands here*
+Add your build and test commands here
 
 ```bash
 # Example:
@@ -83,8 +85,8 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 
 ## Architecture Overview
 
-*Add a brief overview of your project architecture*
+Add a brief overview of your project architecture
 
 ## Conventions & Patterns
 
-*Add your project-specific conventions here*
+Add your project-specific conventions here
