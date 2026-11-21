@@ -5,7 +5,9 @@ description: Use when working in a repository that uses bd or Beads for durable 
 
 # Beads
 
-Use Beads as the shared project task system. Local plans, scratch files, and personal memories are useful, but they are not the durable source of truth for project work.
+Use Beads as the shared project task system.
+Local plans, scratch files, and personal memories are useful.
+They are not the durable source of truth for project work.
 
 ## First Step
 
