@@ -10,7 +10,7 @@
 ##   default: ignore all files
 *
 
-## ------------------------------------------------------------
+## ---------------------------------------------------------------
 ##   General
 
 ## Basic Documents
@@ -22,7 +22,6 @@
 # Allow .github directories
 !.github/
 !.github/**
-
 
 # Allow editorconfig
 !**/.editorconfig
@@ -39,6 +38,8 @@
 !**/dprint.jsonc
 !**/.shellspec
 !**/.mcp.json
+!/tsconfig.json
+!/vitest.config.ts
 !**/CHANGELOG.*
 !**/Release-Note.*
 
@@ -62,6 +63,7 @@
 !/scripts/**
 !/scripts/**/*.sh
 !/scripts/**/*.ts
+
 
 # Documents
 !/docs/
@@ -108,11 +110,20 @@
 !shared/**
 !shared/**/*.ts
 
+## ---------------------------------------------------------------
+##  Project specific
 
-# ----------------------------------------------------------------
+# dictionaries (yaml source + generated txt)
+!/dict/
+!/dict/**
+
+# source (tests live in src/**/__tests__/{unit,functional,integration,e2e})
+!/src/
+!/src/**
+
+## ---------------------------------------------------------------
 ##  Re-exclude: secrets and generated files
 ##  Must stay last: these rules undo the broad allow rules above
-
 
 #   OS specific files
 .DS_Store
@@ -161,11 +172,21 @@ thumbs.db
 **/node_modules/
 **/.pnpm-store/
 
-## ----------------------------------------------------------------
-##   Allow configs
+# Beads / Dolt files (added by bd init)
+!beads/
+!beads/**/SKILL.md
 
-# Allow git config (.gitignore, .gitattributes, ...)
-!**/.git+
+.dolt/
+*.db
+.beads-credential-key
+.beads/proxieddb/
+*.gate.lock*
 
-# Allow other ignore
+
+
+## ---------------------------------------------------------------
+##   Allow ignore
+
+# allow all gitignore
+!**/.gitignore
 !**/*ignore
