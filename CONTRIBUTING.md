@@ -34,9 +34,9 @@ git clone https://github.com/<Owner/Repository>.git
 
 When you make changes, please test:
 
-- **textlint**
+- textlint
   Check writing quality for technical documentation.
-- **markdownlint**
+- markdownlint
   Check if Markdown format is correct.
 
 ### Code style and format
