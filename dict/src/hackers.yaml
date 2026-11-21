@@ -1,0 +1,242 @@
+# src: dict/src/hackers.yaml
+# @(#) : hacker name source for hacker-names (copied from temp/hackers.meta.yaml)
+#
+# Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+#
+# short: output word, lowercase [a-z0-9] groups joined by "-"; must be unique
+# Run `pnpm dict:import` to regenerate dict/hackers.dic.
+
+# --- core: turing award / CS pioneers ---
+knuth:
+  short: knuth
+  fullname: Donald E. Knuth
+  description: "Author of The Art of Computer Programming and creator of TeX; 1974 Turing Award."
+  category: turing
+
+dijkstra:
+  short: dijkstra
+  fullname: Edsger W. Dijkstra
+  description: "Pioneer of structured programming and the shortest-path algorithm; 1972 Turing Award."
+  category: turing
+
+lamport:
+  short: lamport
+  fullname: Leslie Lamport
+  description: "Distributed-systems theorist behind Lamport clocks and Paxos, and creator of LaTeX; 2013 Turing Award."
+  category: turing
+
+ritchie:
+  short: ritchie
+  fullname: Dennis Ritchie
+  description: "Creator of the C language and co-creator of Unix; 1983 Turing Award."
+  category: turing
+
+thompson:
+  short: ken-thompson
+  fullname: Kenneth Thompson
+  description: "Co-creator of Unix, creator of the B language and co-designer of Go; 1983 Turing Award."
+  category: turing
+
+hoare:
+  short: tony-hoare
+  fullname: Tony Hoare
+  description: "Inventor of quicksort, Hoare logic and CSP; 1980 Turing Award."
+  category: turing
+
+cerf:
+  short: vint-cerf
+  fullname: Vinton Cerf
+  description: "Co-designer of TCP/IP, often called a father of the Internet; 2004 Turing Award."
+  category: turing
+
+bernerslee:
+  short: tim-berners-lee
+  fullname: Tim Berners-Lee
+  description: "Inventor of the World Wide Web; 2016 Turing Award."
+  category: turing
+
+patterson:
+  short: patterson
+  fullname: David Patterson
+  description: "RISC pioneer and co-author of the Computer Architecture textbook; 2017 Turing Award."
+  category: turing
+
+hennessy:
+  short: hennessy
+  fullname: John Hennessy
+  description: "RISC pioneer (MIPS) and co-author of the Computer Architecture textbook; 2017 Turing Award."
+  category: turing
+
+aho:
+  short: aho
+  fullname: Alfred Aho
+  description: "Co-author of the 'Dragon Book' on compilers and co-creator of AWK; 2020 Turing Award."
+  category: turing
+
+ullman:
+  short: ullman
+  fullname: Jeffrey Ullman
+  description: "Co-author of the 'Dragon Book' and classic automata and database textbooks; 2020 Turing Award."
+  category: turing
+
+liskov:
+  short: liskov
+  fullname: Barbara Liskov
+  description: "Creator of the CLU language and the Liskov substitution principle; 2008 Turing Award."
+  category: turing
+
+stonebraker:
+  short: stonebraker
+  fullname: Michael Stonebraker
+  description: "Database pioneer behind Ingres and Postgres; 2014 Turing Award."
+  category: turing
+
+diffie:
+  short: diffie
+  fullname: Whitfield Diffie
+  description: "Co-inventor of public-key cryptography and Diffie-Hellman key exchange; 2015 Turing Award."
+  category: turing
+
+hellman:
+  short: hellman
+  fullname: Martin Hellman
+  description: "Co-inventor of public-key cryptography and Diffie-Hellman key exchange; 2015 Turing Award."
+  category: turing
+
+# --- programming language designers ---
+matz:
+  short: matz-matsumoto
+  fullname: Yukihiro Matsumoto
+  description: "Creator of the Ruby programming language."
+  category: language
+
+guido:
+  short: guido-van-rossum
+  fullname: Guido van Rossum
+  description: "Creator of the Python programming language."
+  category: language
+
+stroustrup:
+  short: stroustrup
+  fullname: Bjarne Stroustrup
+  description: "Creator of the C++ programming language."
+  category: language
+
+wirth:
+  short: wirth
+  fullname: Niklaus Wirth
+  description: "Designer of Pascal, Modula-2 and Oberon; 1984 Turing Award."
+  category: language
+
+wall:
+  short: larry-wall
+  fullname: Larry Wall
+  description: "Creator of the Perl programming language."
+  category: language
+
+gosling:
+  short: gosling
+  fullname: James Gosling
+  description: "Lead designer of the Java programming language."
+  category: language
+
+kay:
+  short: alan-kay
+  fullname: Alan Kay
+  description: "Smalltalk pioneer who shaped object-oriented programming; 2003 Turing Award."
+  category: language
+
+odersky:
+  short: odersky
+  fullname: Martin Odersky
+  description: "Creator of the Scala programming language."
+  category: language
+
+# --- OSS / hacker culture ---
+torvalds:
+  short: torvalds
+  fullname: Linus Torvalds
+  description: "Creator of the Linux kernel and Git."
+  category: oss
+
+stallman:
+  short: rms-stallman
+  fullname: Richard Stallman
+  description: "Founder of the GNU Project and the Free Software Foundation, and author of the GPL."
+  category: oss
+
+tj:
+  short: tj-holowaychuk
+  fullname: TJ Holowaychuk
+  description: "Prolific Node.js open-source author known for Express, Mocha and Commander.js."
+  category: oss
+
+tridgell:
+  short: tridgell
+  fullname: Andrew Tridgell
+  description: "Creator of Samba and co-creator of rsync."
+  category: oss
+
+cox:
+  short: russ-cox
+  fullname: Russ Cox
+  description: "Go core team lead and author of the RE2 regular expression engine."
+  category: oss
+
+pike:
+  short: rob-pike
+  fullname: Rob Pike
+  description: "Plan 9 and UTF-8 co-creator, and co-designer of Go."
+  category: oss
+
+kernighan:
+  short: brian-kernighan
+  fullname: Brian Kernighan
+  description: "Co-author of The C Programming Language and the 'K' in AWK."
+  category: oss
+
+# --- authors / methodology ---
+fowler:
+  short: fowler
+  fullname: Martin Fowler
+  description: "Author of Refactoring and a leading voice in agile and software design."
+  category: author
+
+beck:
+  short: beck
+  fullname: Kent Beck
+  description: "Creator of Extreme Programming and test-driven development; co-author of JUnit."
+  category: author
+
+gamma:
+  short: gamma
+  fullname: Erich Gamma
+  description: "Lead author of Design Patterns (the Gang of Four book) and co-author of JUnit."
+  category: author
+
+martin:
+  short: unclebob-martin
+  fullname: Robert C. Martin
+  description: "Known as 'Uncle Bob'; author of Clean Code and promoter of the SOLID principles."
+  category: author
+
+evans:
+  short: evans
+  fullname: Eric Evans
+  description: "Author of Domain-Driven Design."
+  category: author
+
+hunt:
+  short: andy-hunt
+  fullname: Andrew Hunt
+  description: "Co-author of The Pragmatic Programmer and Agile Manifesto signatory."
+  category: author
+
+thomas:
+  short: dave-thomas
+  fullname: David Thomas
+  description: "Co-author of The Pragmatic Programmer and Agile Manifesto signatory."
+  category: author

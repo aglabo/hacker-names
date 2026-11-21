@@ -1,0 +1,13 @@
+// src: .vscode/setting.json
+// @(#) : VSCode settings:
+//
+// Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+{
+  // .vscode
+  "files.associations": {
+    ".dic": "yaml"
+  }
+}

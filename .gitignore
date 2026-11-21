@@ -9,10 +9,8 @@
 # default: ignore all files
 *
 
-## Repository Specific
-# Allow Templates (for project-starter-template repo)
-!/templates/
-!/templates/**
+## ---------------------------------------------------------------
+##   General
 
 ## General
 # Allow README, LICENSE, CONTRIBUTING
@@ -23,13 +21,6 @@
 # Allow .github directories
 !.github/
 !.github/**
-
-# Allow profile (organization README)
-!/profile/
-!/profile/**
-
-# Allow other ignore
-!*ignore
 
 # Allow editorconfig
 !**/.editorconfig
@@ -46,6 +37,8 @@
 !**/dprint.jsonc
 !**/.shellspec
 !**/.mcp.json
+!/tsconfig.json
+!/vitest.config.ts
 !**/CHANGELOG.*
 !**/Release-Note.*
 
@@ -69,6 +62,7 @@
 !/scripts/**
 !/scripts/**/*.sh
 !/scripts/**/*.ts
+
 
 # Documents
 !/docs/
@@ -105,15 +99,22 @@
 !.vscode/cspell*/**
 
 
-##  Git
-# allow all gitignore
-!**/.gitignore
 
+## ---------------------------------------------------------------
+##  Project specific
 
-# ------------------------------------------------------------ ##
-##  Re-exclude: secrets and generated files                      ##
-##  Must stay last: these rules undo the broad allow rules above ##
-## ------------------------------------------------------------ ##
+# dictionaries (yaml source + generated txt)
+!/dict/
+!/dict/**
+
+# source (tests live in src/**/__tests__/{unit,functional,integration,e2e})
+!/src/
+!/src/**
+
+## ---------------------------------------------------------------
+##  Re-exclude: secrets and generated files
+##  Must stay last: these rules undo the broad allow rules above
+
 
 #   OS specific files
 .DS_Store
@@ -161,3 +162,22 @@ thumbs.db
 #   node
 **/node_modules/
 **/.pnpm-store/
+
+# Beads / Dolt files (added by bd init)
+!beads/
+!beads/**/SKILL.md
+
+.dolt/
+*.db
+.beads-credential-key
+.beads/proxieddb/
+*.gate.lock*
+
+
+
+## ---------------------------------------------------------------
+##   Allow ignore
+
+# allow all gitignore
+!**/.gitignore
+!**/*ignore
