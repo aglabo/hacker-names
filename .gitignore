@@ -104,6 +104,10 @@
 !src/
 !src/**/
 !src/**/*.ts
+!shared/
+!shared/**
+!shared/**/*.ts
+
 
 # ----------------------------------------------------------------
 ##  Re-exclude: secrets and generated files
