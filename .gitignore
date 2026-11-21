@@ -1,73 +1,91 @@
 # src: .gitignore
 # @(#) : main ignore settings: template
 #
-# Copyright (c) 2026- atsushifx <http://github.com/atsushifx>
+# Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
 #
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
+# default: ignore all files
+*
 
-##  General
-#   OS specific files
-.DS_Store
-thumbs.db
+## Repository Specific
+# Allow Templates (for project-starter-template repo)
+!/templates/
+!/templates/**
 
-#   logs, patches
-*.log
-*.diff
-*.patch
+## General
+# Allow README, LICENSE, CONTRIBUTING
+!**/README*
+!**/LICENSE*
+!**/CONTRIBUTING*
 
-#   history, cache
-.history/
-.cache/
-# **/*cache
+# Allow .github directories
+!.github/
+!.github/**
+
+# Allow profile (organization README)
+!/profile/
+!/profile/**
+
+# Allow other ignore
+!*ignore
+
+# Allow editorconfig
+!**/.editorconfig
+
+# Allow settings
+!**/settings.json
 
 
-#   backup/swap/temp
-$~*
-~*
-*~
-*.tmp
-*.swp
-*.lock
+## Root configs
+!**/package.json
+!**/pnpm-lock.yaml
+!**/renovate.json
+!**/lefthook.yml
+!**/dprint.jsonc
+!**/.shellspec
+!**/.mcp.json
+!**/CHANGELOG.*
+!**/Release-Note.*
 
-# session files
-*session.json
-*session
-**/*session.json
-**/*session
+## Project directories
+# config files
+!configs/
+!configs/**
+!configs/**/*.json
+!configs/**/*.yml
+!configs/**/*.yaml
+!configs/**/*.toml
+!configs/**/*rc
+!configs/**/*.js
+!configs/**/*.mjs
 
-# .env files
-.env*
-.env.*
+# runners & scripts
+!/runners
+!/runners/**
+!/runners/**/*.sh
+!/scripts
+!/scripts/**
+!/scripts/**/*.sh
+!/scripts/**/*.ts
 
-# release
-releases/*
-!releases/.keep
+# Documents
+!/docs/
+!/docs/**/
+!/docs/**/*.md
+!/docs/**/*.mdx
 
-##  Git
-!**/.gitignore
 
-## Development tools (installed locally)
-.tools/
+## AI Agents
+# General
+!**/AGENT.md
 
-## Worktrees
-# worktree base dir
-.worktrees/
-
-## AI generated files
-
-## Coding AI depended
-# SDD (Spec-Driven Development) files
-
-# claude code setting
-.claude/*
-
-# settings
-!.claude/**/settings.json
-
-# agents can tracking
+# claude code
 !**/CLAUDE*.md
+
+# allowlist details: .claude/.gitignore
+!.claude/
 !.claude/agents/
 !.claude/agents/**
 !.claude/rules/
@@ -75,39 +93,71 @@ releases/*
 !.claude/commands/
 !.claude/commands/**
 
-# MCP server dependency files
-.cocoindex_code/
-.serena/
-.lsmcp/
-.codegraph/*
-
-## Temporary directories are never tracked
-temp/
-tmp/
-**/temp/
-**/tmp/
-
 ##  Editor
 #   VSCode
-.vscode/*
+!.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 !.vscode/cspell*
+!.vscode/cspell*/**
 
-## Node
-node_modules/
 
-# Beads / Dolt files (added by bd init)
-.beads/*
-!.beads/config.yaml
-!.beads/issues.jsonl
+##  Git
+# allow all gitignore
+!**/.gitignore
 
-.dolt/
-*.db
-.beads-credential-key
 
-# Beads / Dolt files (added by bd init)
-.beads/proxieddb/
+# ------------------------------------------------------------ ##
+##  Re-exclude: secrets and generated files                      ##
+##  Must stay last: these rules undo the broad allow rules above ##
+## ------------------------------------------------------------ ##
+
+#   OS specific files
+.DS_Store
+thumbs.db
+
+#   logs, patches
+**/*.log
+**/*.diff
+**/*.patch
+
+#   history, cache
+**/.history/
+**/.cache/
+
+#   backup/swap/temp
+**/$~*
+**/~*
+**/*~
+**/*.tmp
+**/*.swp
+# **/*.lock # track *.lock
+
+#   session files
+**/*session.json
+**/*session
+
+#   .env files
+**/.env*
+!.env.example
+
+
+#   API keys / credentials
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx
+**/*apikey*
+**/*api-key*
+**/*api_key*
+
+#   temporary directories
+**/temp
+**/tmp
+
+#   node
+**/node_modules/
+**/.pnpm-store/

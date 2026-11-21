@@ -1,16 +1,16 @@
 // src: .vscode/cspell.json
 // @(#) : cspell config for user-centric settings
 //
-//
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
 //
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
+
 {
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/packages/cspell-types/cspell.schema.json",
   "version": "0.2",
   "import": [
-    "${env:XDG_CONFIG_HOME}/vscode/cspell.config.json"
+    "${env:XDG_CONFIG_HOME}/global-configs/cspell.config.json"
   ],
   "language": "en",
   "caseSensitive": false,
@@ -21,6 +21,13 @@
       "description": "user dictionary for this project",
       "path": "./cspell/dicts/project.dic",
       "addWords": true,
+      "scope": "workspace"
+    },
+    {
+      "name": "test-id-dic",
+      "description": "test-id dictionary",
+      "path": "./cspell/dicts/test-id.dic",
+      "addWords": false,
       "scope": "workspace"
     }
   ],
@@ -41,7 +48,8 @@
     // user defined dictionaries
     "user-dic",
     "textlint-dic",
-    "project-dic"
+    "project-dic",
+    "test-id-dic"
   ],
   "useGitignore": true
 }
