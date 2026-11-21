@@ -61,6 +61,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^21.2.4",
     "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "5.1.1",
     "oxlint": "^1.94.0",
     "tsdown": "^0.23.7",
     "tsrs": "7.1.0-beta.tsrs4",
