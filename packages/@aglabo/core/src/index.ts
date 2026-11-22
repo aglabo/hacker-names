@@ -1,4 +1,4 @@
-// src: src/index.ts
+// src: packages/@aglabo/core/src/index.ts
 // @(#) : public API of hacker-names
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
@@ -6,8 +6,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import type { GenerateOptions } from '#shared/types/index.types.ts';
-import { ADJECTIVES, HACKERS } from './dict.ts';
+import type { GenerateOptions } from '@aglabo/hacker-names-types';
+import { ADJECTIVES, HACKERS } from '@aglabo/hacker-names-dict';
 
 export type { GenerateOptions };
 

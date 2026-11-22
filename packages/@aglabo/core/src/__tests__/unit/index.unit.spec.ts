@@ -1,4 +1,4 @@
-// src: src/__tests__/unit/index.unit.spec.ts
+// src: packages/@aglabo/core/src/__tests__/unit/index.unit.spec.ts
 // @(#) : unit tests for the public API and bundled dictionaries
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
@@ -7,17 +7,8 @@
 // https://opensource.org/licenses/MIT
 
 import { describe, expect, test } from 'vitest';
-import { ADJECTIVES, HACKERS } from '../../dict.ts';
+import { ADJECTIVES, HACKERS } from '@aglabo/hacker-names-dict';
 import { generate, VERSION } from '../../index.ts';
-
-describe('dictionaries', () => {
-  test('are non-empty and follow the word format', () => {
-    expect(ADJECTIVES.length).toBeGreaterThan(0);
-    expect(HACKERS.length).toBeGreaterThan(0);
-    for (const a of ADJECTIVES) { expect(a).toMatch(/^[a-z]+$/); }
-    for (const h of HACKERS) { expect(h).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/); }
-  });
-});
 
 describe('generate', () => {
   test('returns <adjective>-<hacker> by default', () => {
