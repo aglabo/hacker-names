@@ -9,6 +9,7 @@
   "extends": "./base/configs/tsconfig.base.json",
   "include": [
     "packages/@aglabo/*/src",
+    "shared/packages/*/src",
     "configs",
     "base/configs",
     "scripts/**/*.ts"
