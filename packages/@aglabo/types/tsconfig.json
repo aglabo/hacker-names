@@ -1,0 +1,16 @@
+// src: packages/@aglabo/types/tsconfig.json
+// @(#) : package type-check settings (extends the shared base)
+//
+// Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+{
+  "extends": "../../../base/configs/tsconfig.base.json",
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist"
+  ]
+}
