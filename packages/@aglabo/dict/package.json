@@ -1,0 +1,23 @@
+{
+  "name": "@aglabo/hacker-names-dict",
+  "version": "0.0.1",
+  "description": "hacker and adjective dictionaries built from YAML",
+  "license": "MIT",
+  "author": "atsushifx",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint:types": "tsrs --noEmit -p tsconfig.json",
+    "sync:configs": "bash ../../../scripts/sync-configs.sh . package"
+  }
+}
