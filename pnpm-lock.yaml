@@ -215,6 +215,29 @@ importers:
         specifier: ^2.9.1
         version: 2.9.1
 
+  packages/cli:
+    dependencies:
+      '@aglabo/hacker-names':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      '@aglabo/hacker-names-dict':
+        specifier: workspace:*
+        version: link:../dict
+
+  packages/core:
+    dependencies:
+      '@aglabo/hacker-names-dict':
+        specifier: workspace:*
+        version: link:../dict
+      '@aglabo/hacker-names-types':
+        specifier: workspace:*
+        version: link:../types
+
+  packages/dict: {}
+
+  packages/types: {}
+
 packages:
 
   '@babel/helper-string-parser@7.29.15':
