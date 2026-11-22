@@ -1,39 +1,28 @@
 // src: configs/vitest.config.integration.ts
-// @(#) : vitest config for integration tests (src/**/__tests__/integration)
+// @(#) : vitest config for integration tests (packages/@aglabo/*/src/**/__tests__/integration)
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
 //
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-// libs for base directory
+// libs
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// base directory
-const configDir = path.dirname(fileURLToPath(import.meta.url));
-const rootDir = path.resolve(configDir, '..');
+// shared level factory
+import { defineLevelConfig } from '../base/configs/vitest.config.level.ts';
 
-// system config
-import { mergeConfig } from 'vitest/config';
-
-// shared base config
+// project config
 import baseConfig from './vitest.config.base.ts';
 
+const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
 // config
-export default mergeConfig(baseConfig, {
-  root: rootDir,
-  test: {
-    include: [
-      // Integration Test - interaction between modules
-      '{src,scripts}/**/__tests__/integration/**/*.spec.ts',
-    ],
-    cacheDir: path.resolve(rootDir, '.cache/vitest-cache/integration/'),
-    // coverage is reported per level to keep reports separate
-    coverage: {
-      provider: 'v8',
-      reporter: ['json', 'lcov'],
-      reportsDirectory: path.resolve(rootDir, 'coverage/integration'),
-    },
-  },
+export default defineLevelConfig({
+  baseConfig,
+  rootDir,
+  level: 'integration',
+  // integration test - tests across workspace packages
+  include: ['{packages/@aglabo/*/src,scripts}/**/__tests__/integration/**/*.spec.ts'],
 });

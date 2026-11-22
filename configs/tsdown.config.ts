@@ -1,45 +1,36 @@
 // src: configs/tsdown.config.ts
-// @(#) : tsdown config for bundling the library and CLI (src/index.ts, src/cli.ts)
+// @(#) : tsdown config bundling each workspace package (packages/@aglabo/*/src) into its dist
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
 //
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-// libs
-import { readFileSync } from 'node:fs';
-
 // system config
-import { defineConfig } from 'tsdown';
+import { defineConfig, type UserConfig } from 'tsdown';
+
+// shared base config
+import { baseConfig } from '../base/configs/tsdown.config.base.ts';
 
 // plugins
-// Vite (vitest) understands `import text from "./x.dic?raw"` natively; rolldown does not.
-// This plugin gives rolldown the same behaviour so one source works in both.
-const pluginRawQuery = {
-  name: 'raw-query',
-  load(id: string) {
-    if (!id.endsWith('?raw')) { return null; }
-    const text = readFileSync(id.slice(0, -'?raw'.length), 'utf8');
-    return `export default ${JSON.stringify(text)};`;
-  },
-};
+import { pluginYaml } from './plugin-yaml.ts';
 
-// config
-export default defineConfig({
-  // entries: library API and CLI
-  entry: {
-    index: 'src/index.ts',
-    cli: 'src/cli.ts',
-  },
+// settings shared by every package build in this repository
+const common: UserConfig = {
+  ...baseConfig,
   // resolve paths from the repository root, not from configs/
   cwd: '..',
-  // output
-  format: 'esm',
-  platform: 'node',
-  target: 'node20',
-  // emit type declarations
-  dts: true,
-  // wipe the output directory before each build
-  clean: true,
-  plugins: [pluginRawQuery],
-});
+  // sibling workspace packages are resolved at runtime, never inlined
+  external: [/^@aglabo\//],
+  plugins: [pluginYaml],
+};
+
+const pkg = (name: string) => `packages/@aglabo/${name}`;
+
+// config: one build per package, in dependency order
+export default defineConfig([
+  { ...common, entry: { index: `${pkg('types')}/src/index.ts` }, outDir: `${pkg('types')}/dist`, dts: true },
+  { ...common, entry: { index: `${pkg('dict')}/src/index.ts` }, outDir: `${pkg('dict')}/dist`, dts: true },
+  { ...common, entry: { index: `${pkg('core')}/src/index.ts` }, outDir: `${pkg('core')}/dist`, dts: true },
+  { ...common, entry: { cli: `${pkg('cli')}/src/cli.ts` }, outDir: `${pkg('cli')}/dist`, dts: false },
+]);
