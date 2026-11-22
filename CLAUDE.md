@@ -75,17 +75,21 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 
 ## Build & Test
 
-Add your build and test commands here
-
 ```bash
-# Example:
-# npm install
-# npm test
+pnpm install
+pnpm build   # builds every package into packages/*/dist
+pnpm test    # unit, functional, integration, e2e
+pnpm lint && pnpm lint:types && pnpm lint:filenames
 ```
 
 ## Architecture Overview
 
-Add a brief overview of your project architecture
+pnpm workspace under `packages/` (dependency order: types, dict, core, cli):
+
+- `types` (`@aglabo/hacker-names-types`): `GenerateOptions`
+- `dict` (`@aglabo/hacker-names-dict`): `ADJECTIVES` / `HACKERS`, generated at build time directly from `dict/src/*.yaml` (`configs/plugin-yaml.ts`)
+- `core` (`@aglabo/hacker-names`): `generate()` / `VERSION` — the library TypeScript users import
+- `cli` (`@aglabo/hacker-names-cli`): `run()` and the `hacker-names` bin
 
 ## Conventions & Patterns
 
