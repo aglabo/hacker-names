@@ -6,8 +6,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import type { GenerateOptions } from '@aglabo/hacker-names-types';
 import { ADJECTIVES, HACKERS } from '@aglabo/hacker-names-dict';
+import type { GenerateOptions } from '@aglabo/hacker-names-types';
 
 export type { GenerateOptions };
 
