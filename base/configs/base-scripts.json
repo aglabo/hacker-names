@@ -1,6 +1,20 @@
 {
   "scripts": {
+    "build": "tsdown --config configs/tsdown.config.ts",
+    "clean:dist": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "lint": "oxlint -c configs/oxlint.config.ts",
+    "lint:fix": "oxlint -c configs/oxlint.config.ts --fix",
     "lint:types": "tsrs --noEmit -p tsconfig.json",
+    "test": "pnpm run test:unit && pnpm run test:functional && pnpm run test:integration && pnpm run test:e2e",
+    "test:unit": "vitest run --config ./configs/vitest.config.unit.ts",
+    "test:unit:watch": "vitest --config ./configs/vitest.config.unit.ts",
+    "test:functional": "vitest run --config ./configs/vitest.config.functional.ts",
+    "test:integration": "vitest run --config ./configs/vitest.config.integration.ts",
+    "test:e2e": "vitest run --config ./configs/vitest.config.e2e.ts",
+    "test:coverage:unit": "vitest run --coverage --config ./configs/vitest.config.unit.ts",
+    "test:coverage:functional": "vitest run --coverage --config ./configs/vitest.config.functional.ts",
+    "test:coverage:integration": "vitest run --coverage --config ./configs/vitest.config.integration.ts",
+    "test:coverage:e2e": "vitest run --coverage --config ./configs/vitest.config.e2e.ts",
     "sync:configs": "bash ../../../scripts/sync-configs.sh . package"
   }
 }
