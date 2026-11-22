@@ -1,0 +1,27 @@
+{
+  "name": "@aglabo/hacker-names",
+  "version": "0.0.1",
+  "description": "generate hacker names from TypeScript",
+  "license": "MIT",
+  "author": "atsushifx",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint:types": "tsrs --noEmit -p tsconfig.json",
+    "sync:configs": "bash ../../../scripts/sync-configs.sh . package"
+  },
+  "dependencies": {
+    "@aglabo/hacker-names-dict": "workspace:*",
+    "@aglabo/hacker-names-types": "workspace:*"
+  }
+}
