@@ -6,8 +6,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import { describe, expect, test } from 'vitest';
 import { ADJECTIVES, HACKERS } from '@aglabo/hacker-names-dict';
+import { describe, expect, test } from 'vitest';
 import { run } from '../../run.ts';
 
 describe('run', () => {

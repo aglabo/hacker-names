@@ -6,9 +6,9 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+import { generate, VERSION } from '@aglabo/hacker-names';
 import { parseArgs } from 'node:util';
 import type { CliResult } from './run.types.ts';
-import { generate, VERSION } from '@aglabo/hacker-names';
 
 const USAGE = `Usage: hacker-names [options]
 
