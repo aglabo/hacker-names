@@ -75,18 +75,48 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 
 ## Build & Test
 
-Add your build and test commands here
+```bash
+pnpm install
+pnpm build   # builds every package into <package>/dist
+pnpm test    # unit, functional, integration, e2e
+pnpm lint && pnpm lint:types && pnpm lint:filenames
+```
+
+Each package also works standalone from its own directory.
+`configs/` holds its tsdown, vitest, and oxlint config:
 
 ```bash
-# Example:
-# npm install
-# npm test
+cd packages/@aglabo/core
+pnpm build       # this package only (build workspace deps first for cli e2e)
+pnpm test        # unit, functional, integration, e2e
+pnpm lint && pnpm lint:types
 ```
 
 ## Architecture Overview
 
-Add a brief overview of your project architecture
+pnpm workspace under `packages/@aglabo/` and `shared/packages/`.
+Dependency order: types, dict, core, cli.
+
+- `shared/packages/types` (`@aglabo/hacker-names-types`, private): `GenerateOptions`.
+  Bundled into `core`, exposed as `@aglabo/hacker-names/types`.
+- `dict` (`@aglabo/hacker-names-dict`): `ADJECTIVES` / `HACKERS`.
+  Generated at build time from `dict/src/*.yaml` (`configs/plugin-yaml.ts`).
+- `core` (`@aglabo/hacker-names`): `generate()` / `VERSION` — the library TypeScript users import
+- `cli` (`@aglabo/hacker-names-cli`): `run()` and the `hacker-names` bin
 
 ## Conventions & Patterns
 
-Add your project-specific conventions here
+### Config layout: base vs. extension
+
+- `base/configs/` — shared, project-agnostic config.
+  It holds the tsconfig, vitest, and tsdown configs.
+  It also holds oxlint, commitlint, and script templates.
+  Do not put repo-specific values here.
+- `configs/` — this repository's extension.
+  It imports the base by relative path (`../base/configs/...`).
+- Every package `tsconfig.json` extends `base/configs/tsconfig.base.json`.
+  This covers `packages/@aglabo/*` and `shared/packages/*`.
+- `package.json` `scripts` cannot `extends`, so they are copied from the base.
+  Packages use `base/configs/base-scripts.json`; the root uses `base-root-scripts.json`.
+  Run `bash scripts/sync-configs.sh <target_dir> <package|root> [--dry-run]` (`pnpm sync:configs`).
+  Local-only scripts are kept.

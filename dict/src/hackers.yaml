@@ -7,7 +7,6 @@
 # https://opensource.org/licenses/MIT
 #
 # short: output word, lowercase [a-z0-9] groups joined by "-"; must be unique
-# Run `pnpm dict:import` to regenerate dict/hackers.dic.
 
 # --- core: turing award / CS pioneers ---
 knuth:

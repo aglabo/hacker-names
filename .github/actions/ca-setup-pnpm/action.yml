@@ -1,0 +1,34 @@
+# src: .github/actions/ca-setup-pnpm/action.yml
+# @(#) : composite action to set up pnpm and Node.js, then install dependencies
+#
+# Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+name: "setup-pnpm"
+description: "Set up pnpm and Node.js with caching, then run pnpm install --frozen-lockfile (the repository must already be checked out)"
+
+inputs:
+  node-version:
+    description: "Node.js version"
+    required: false
+    default: "24"
+
+runs:
+  using: composite
+  steps:
+    # pnpm version is resolved from the packageManager field
+    - name: setup-pnpm
+      uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+
+    - name: setup-node
+      uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: "pnpm"
+
+    # the prepare script (setup-dev-env.sh) skips itself when CI is set
+    - name: install-packages
+      shell: bash
+      run: pnpm install --frozen-lockfile

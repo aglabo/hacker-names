@@ -1,14 +1,17 @@
-// src: ./tsconfig.json
-// @(#) : typescript compile settings
+// src: tsconfig.json
+// @(#) : root type-check settings (extends the shared base)
 //
-// Copyright (c) 2025 atsushifx <http://github.com/atsushifx>
+// Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
 //
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 {
+  "extends": "./base/configs/tsconfig.base.json",
   "include": [
-    "src",
+    "packages/@aglabo/*/src",
+    "shared/packages/*/src",
     "configs",
+    "base/configs",
     "scripts/**/*.ts"
   ],
   "exclude": [
@@ -16,36 +19,6 @@
     ".cache"
   ],
   "compilerOptions": {
-    // language / environment
-    "target": "ES2023",
-    "lib": [
-      "ES2023"
-    ],
-    "types": [
-      "node"
-    ],
-    // module resolution
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    // allow imports with ".ts" extensions (requires noEmit)
-    "allowImportingTsExtensions": true,
-    // require explicit "import type" / "export type" so type-only imports are always erased
-    "verbatimModuleSyntax": true,
-    // restrict to code that can be transpiled file by file (for tsdown / vitest)
-    "isolatedModules": true,
-    // strictness
-    "strict": true,
-    // include undefined in results of indexed access on arrays and records
-    "noUncheckedIndexedAccess": true,
-    // disallow explicitly assigning undefined to optional properties
-    "exactOptionalPropertyTypes": true,
-    // emit
-    // type-check only (tsdown handles the build)
-    "noEmit": true,
-    // misc
-    // skip type-checking of .d.ts files in node_modules
-    "skipLibCheck": true,
-    // cache
     "incremental": true,
     "tsBuildInfoFile": "./.cache/tsbuildinfo"
   }

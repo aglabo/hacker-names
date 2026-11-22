@@ -1,0 +1,109 @@
+# src: .github/workflows/ci-typescript-qa.yml
+# @(#) : CI workflow for TypeScript QA (lint, type check, filename lint, tests)
+#
+# Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+name: "CI: TypeScript QA"
+
+# Minimal permissions following security best practices
+permissions:
+  contents: read
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - releases
+
+  pull_request:
+    branches:
+      - main
+      - master
+      - releases
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  lint:
+    name: Lint (oxlint)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup pnpm and install
+        uses: $/.github/actions/ca-setup-pnpm
+
+      - name: Lint (oxlint)
+        run: pnpm run lint
+
+  lint-types:
+    name: Lint types (tsrs)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup pnpm and install
+        uses: $/.github/actions/ca-setup-pnpm
+
+      - name: Lint types (tsrs)
+        run: pnpm run lint:types
+
+  lint-filenames:
+    name: Lint filenames (ls-lint)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup pnpm and install
+        uses: $/.github/actions/ca-setup-pnpm
+
+      - name: Lint filenames (ls-lint)
+        run: pnpm run lint:filenames
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup pnpm and install
+        uses: $/.github/actions/ca-setup-pnpm
+
+      - name: Test
+        run: pnpm run test
