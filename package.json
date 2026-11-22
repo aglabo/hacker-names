@@ -17,7 +17,7 @@
   "type": "module",
   "scripts": {
     "prepare": "bash ./scripts/setup-dev-env.sh",
-    "clean:dist": "pnpm rimraf dist",
+    "clean:dist": "pnpm -r exec node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
     "scan:secrets": "concurrently --raw --group \"bash runners/run-betterleaks.sh\" \"secretlint\"",
     "check:dprint": "dprint check --list-different",
     "check:dprint:diff": "dprint check",
@@ -37,7 +37,7 @@
     "lint:filenames": "ls-lint --config ./configs/ls-lint.yaml",
     "lint": "oxlint -c configs/oxlint.config.ts",
     "lint:fix": "oxlint -c configs/oxlint.config.ts --fix",
-    "dev": "tsx packages/cli/src/cli.ts",
+    "dev": "tsx packages/@aglabo/cli/src/cli.ts",
     "build": "tsdown --config configs/tsdown.config.ts",
     "test": "pnpm run test:unit && pnpm run test:functional && pnpm run test:integration && pnpm run test:e2e",
     "test:unit": "vitest run --config ./configs/vitest.config.unit.ts",
@@ -48,7 +48,8 @@
     "test:coverage:integration": "vitest run --coverage --config ./configs/vitest.config.integration.ts",
     "test:e2e": "pnpm build && vitest run --config ./configs/vitest.config.e2e.ts",
     "test:coverage:e2e": "vitest run --coverage --config ./configs/vitest.config.e2e.ts",
-    "test:unit:watch": "vitest --config ./configs/vitest.config.unit.ts"
+    "test:unit:watch": "vitest --config ./configs/vitest.config.unit.ts",
+    "sync:configs": "bash scripts/sync-configs.sh . root"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^21.2.4",

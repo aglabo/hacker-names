@@ -215,7 +215,7 @@ importers:
         specifier: ^2.9.1
         version: 2.9.1
 
-  packages/cli:
+  packages/@aglabo/cli:
     dependencies:
       '@aglabo/hacker-names':
         specifier: workspace:*
@@ -225,7 +225,7 @@ importers:
         specifier: workspace:*
         version: link:../dict
 
-  packages/core:
+  packages/@aglabo/core:
     dependencies:
       '@aglabo/hacker-names-dict':
         specifier: workspace:*
@@ -234,9 +234,9 @@ importers:
         specifier: workspace:*
         version: link:../types
 
-  packages/dict: {}
+  packages/@aglabo/dict: {}
 
-  packages/types: {}
+  packages/@aglabo/types: {}
 
 packages:
 
