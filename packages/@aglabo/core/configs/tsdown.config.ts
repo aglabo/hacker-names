@@ -17,9 +17,9 @@ export default defineConfig({
   ...baseConfig,
   // resolve paths from the package directory, not from configs/
   cwd: '..',
-  entry: { index: 'src/index.ts' },
+  entry: { index: 'src/index.ts', types: 'src/types.ts' },
   dts: true,
   outDir: 'dist',
-  // sibling workspace packages are resolved at runtime, never inlined
-  external: [/^@aglabo\//],
+  // sibling workspace packages are resolved at runtime; the private types package is bundled in
+  external: [/^@aglabo\/(?!hacker-names-types)/],
 });

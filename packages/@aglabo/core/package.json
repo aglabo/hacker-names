@@ -9,6 +9,10 @@
     ".": {
       "types": "./dist/index.d.mts",
       "default": "./dist/index.mjs"
+    },
+    "./types": {
+      "types": "./dist/types.d.mts",
+      "default": "./dist/types.mjs"
     }
   },
   "main": "./dist/index.mjs",
@@ -35,7 +39,9 @@
     "clean:dist": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
   },
   "dependencies": {
-    "@aglabo/hacker-names-dict": "workspace:*",
+    "@aglabo/hacker-names-dict": "workspace:*"
+  },
+  "devDependencies": {
     "@aglabo/hacker-names-types": "workspace:*"
   }
 }

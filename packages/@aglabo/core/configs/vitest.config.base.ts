@@ -20,7 +20,7 @@ import sharedConfig from '../../../../base/configs/vitest.config.base.ts';
 import { pluginYaml } from '../../../../configs/plugin-yaml.ts';
 
 const workspaceRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../..');
-const pkgSrc = (name: string) => path.resolve(workspaceRoot, 'packages/@aglabo', name, 'src/index.ts');
+const pkgSrc = (dir: string, name: string) => path.resolve(workspaceRoot, dir, name, 'src/index.ts');
 
 // config
 export default mergeConfig(sharedConfig, {
@@ -28,8 +28,8 @@ export default mergeConfig(sharedConfig, {
   resolve: {
     // resolve workspace packages to their sources so unit tests need no build
     alias: {
-      '@aglabo/hacker-names-types': pkgSrc('types'),
-      '@aglabo/hacker-names-dict': pkgSrc('dict'),
+      '@aglabo/hacker-names-types': pkgSrc('shared/packages', 'types'),
+      '@aglabo/hacker-names-dict': pkgSrc('packages/@aglabo', 'dict'),
     },
   },
 });
