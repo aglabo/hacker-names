@@ -1,4 +1,4 @@
-// src: src/__tests__/e2e/cli.e2e.spec.ts
+// src: packages/@aglabo/cli/src/__tests__/e2e/cli.e2e.spec.ts
 // @(#) : e2e tests: run the built CLI (dist/cli.mjs) as a real child process (run `pnpm build` first)
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>

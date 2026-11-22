@@ -1,4 +1,4 @@
-// src: shared/types/run.types.ts
+// src: packages/@aglabo/cli/src/run.types.ts
 // @(#) : Type definitions for the CLI logic
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>

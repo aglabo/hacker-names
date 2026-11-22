@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// src: src/cli.ts
+// src: packages/@aglabo/cli/src/cli.ts
 // @(#) : CLI entry point (reads argv, writes stdout/stderr, sets exit code)
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>

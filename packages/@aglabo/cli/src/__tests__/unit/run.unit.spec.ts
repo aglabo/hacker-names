@@ -1,4 +1,4 @@
-// src: src/__tests__/unit/run.unit.spec.ts
+// src: packages/@aglabo/cli/src/__tests__/unit/run.unit.spec.ts
 // @(#) : unit tests for the CLI logic
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
@@ -7,7 +7,7 @@
 // https://opensource.org/licenses/MIT
 
 import { describe, expect, test } from 'vitest';
-import { ADJECTIVES, HACKERS } from '../../dict.ts';
+import { ADJECTIVES, HACKERS } from '@aglabo/hacker-names-dict';
 import { run } from '../../run.ts';
 
 describe('run', () => {

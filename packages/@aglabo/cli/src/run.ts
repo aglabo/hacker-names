@@ -1,4 +1,4 @@
-// src: src/run.ts
+// src: packages/@aglabo/cli/src/run.ts
 // @(#) : CLI logic (no process access, so it can be unit-tested)
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
@@ -7,8 +7,8 @@
 // https://opensource.org/licenses/MIT
 
 import { parseArgs } from 'node:util';
-import type { CliResult } from '#shared/types/run.types.ts';
-import { generate, VERSION } from './index.ts';
+import type { CliResult } from './run.types.ts';
+import { generate, VERSION } from '@aglabo/hacker-names';
 
 const USAGE = `Usage: hacker-names [options]
 
