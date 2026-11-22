@@ -1,0 +1,24 @@
+{
+  "name": "@aglabo/hacker-names-cli",
+  "version": "0.0.1",
+  "description": "hacker-names command line interface",
+  "license": "MIT",
+  "author": "atsushifx",
+  "type": "module",
+  "bin": {
+    "hacker-names": "./dist/cli.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint:types": "tsrs --noEmit -p tsconfig.json",
+    "sync:configs": "bash ../../../scripts/sync-configs.sh . package"
+  },
+  "dependencies": {
+    "@aglabo/hacker-names": "workspace:*"
+  },
+  "devDependencies": {
+    "@aglabo/hacker-names-dict": "workspace:*"
+  }
+}
