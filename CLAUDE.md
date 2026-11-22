@@ -82,6 +82,15 @@ pnpm test    # unit, functional, integration, e2e
 pnpm lint && pnpm lint:types && pnpm lint:filenames
 ```
 
+Each package also works standalone from its own directory (`configs/` holds its tsdown/vitest/oxlint config):
+
+```bash
+cd packages/@aglabo/core
+pnpm build       # this package only (build workspace deps first for cli e2e)
+pnpm test        # unit, functional, integration, e2e
+pnpm lint && pnpm lint:types
+```
+
 ## Architecture Overview
 
 pnpm workspace under `packages/@aglabo/` (dependency order: types, dict, core, cli):
