@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "lint:types": "tsrs --noEmit -p tsconfig.json",
+    "sync:configs": "bash ../../../scripts/sync-configs.sh . package"
+  }
+}
