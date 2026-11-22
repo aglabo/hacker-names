@@ -1,6 +1,7 @@
 {
   "name": "@aglabo/hacker-names-types",
   "version": "0.0.1",
+  "private": true,
   "description": "type definitions for hacker-names",
   "license": "MIT",
   "author": "atsushifx",

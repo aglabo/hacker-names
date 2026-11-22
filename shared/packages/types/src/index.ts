@@ -1,4 +1,4 @@
-// src: packages/@aglabo/types/src/index.ts
+// src: shared/packages/types/src/index.ts
 // @(#) : Type definitions for the public API of hacker-names
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>

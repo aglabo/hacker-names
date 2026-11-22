@@ -1,4 +1,4 @@
-// src: packages/@aglabo/types/configs/vitest.config.unit.ts
+// src: shared/packages/types/configs/vitest.config.unit.ts
 // @(#) : vitest config for unit tests of the types package
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>

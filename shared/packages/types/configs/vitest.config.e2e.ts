@@ -1,4 +1,4 @@
-// src: packages/@aglabo/types/configs/vitest.config.e2e.ts
+// src: shared/packages/types/configs/vitest.config.e2e.ts
 // @(#) : vitest config for e2e tests of the types package
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>

@@ -1,4 +1,4 @@
-// src: packages/@aglabo/types/configs/oxlint.config.ts
+// src: shared/packages/types/configs/oxlint.config.ts
 // @(#) : oxlint config for the types package (extends the shared base)
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
