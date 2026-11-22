@@ -230,13 +230,14 @@ importers:
       '@aglabo/hacker-names-dict':
         specifier: workspace:*
         version: link:../dict
+    devDependencies:
       '@aglabo/hacker-names-types':
         specifier: workspace:*
-        version: link:../types
+        version: link:../../../shared/packages/types
 
   packages/@aglabo/dict: {}
 
-  packages/@aglabo/types: {}
+  shared/packages/types: {}
 
 packages:
 
