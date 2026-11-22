@@ -77,14 +77,14 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 
 ```bash
 pnpm install
-pnpm build   # builds every package into packages/*/dist
+pnpm build   # builds every package into packages/@aglabo/*/dist
 pnpm test    # unit, functional, integration, e2e
 pnpm lint && pnpm lint:types && pnpm lint:filenames
 ```
 
 ## Architecture Overview
 
-pnpm workspace under `packages/` (dependency order: types, dict, core, cli):
+pnpm workspace under `packages/@aglabo/` (dependency order: types, dict, core, cli):
 
 - `types` (`@aglabo/hacker-names-types`): `GenerateOptions`
 - `dict` (`@aglabo/hacker-names-dict`): `ADJECTIVES` / `HACKERS`, generated at build time directly from `dict/src/*.yaml` (`configs/plugin-yaml.ts`)
@@ -93,4 +93,10 @@ pnpm workspace under `packages/` (dependency order: types, dict, core, cli):
 
 ## Conventions & Patterns
 
-Add your project-specific conventions here
+### Config layout: base vs. extension
+
+- `base/configs/` — shared, project-agnostic config (tsconfig, vitest, tsdown, oxlint, commitlint, script templates). Do not put repo-specific values here.
+- `configs/` — this repository's extension; imports the base by relative path (`../base/configs/...`).
+- `packages/@aglabo/*/tsconfig.json` extends `base/configs/tsconfig.base.json`.
+- Things that cannot `extends` (package.json `scripts`) are copied from `base/configs/base-scripts.json` (packages) and `base-root-scripts.json` (root)
+  with `bash scripts/sync-configs.sh <target_dir> <package|root> [--dry-run]` (`pnpm sync:configs`). Local-only scripts are kept.
