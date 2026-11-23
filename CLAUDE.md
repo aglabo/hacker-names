@@ -118,5 +118,6 @@ Dependency order: types, dict, core, cli.
   This covers `packages/@aglabo/*` and `shared/packages/*`.
 - `package.json` `scripts` cannot `extends`, so they are copied from the base.
   Packages use `base/configs/base-scripts.json`; the root uses `base-root-scripts.json`.
-  Run `bash scripts/sync-configs.sh <target_dir> <package|root> [--dry-run]` (`pnpm sync:configs`).
+  Run `pnpm sync:configs` in a package or the root, or `pnpm sync:configs:all` for every package.
+  The target and kind are inferred from where pnpm was invoked; add `--dry-run` to preview.
   Local-only scripts are kept.
