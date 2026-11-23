@@ -28,7 +28,7 @@ export default mergeConfig(sharedConfig, {
   resolve: {
     // resolve workspace packages to their sources so unit tests need no build
     alias: {
-      '@aglabo/hacker-names-types': pkgSrc('shared/packages', 'types'),
+      '@aglabo/hacker-names-types': pkgSrc('shared', 'types'),
       '@aglabo/hacker-names-dict': pkgSrc('packages/@aglabo', 'dict'),
     },
   },
