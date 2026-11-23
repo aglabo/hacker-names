@@ -35,7 +35,7 @@
     "lint:markdown": "cross-env MSYS='NOGLOB' bash runners/run-markdownlint.sh ",
     "lint:types": "tsrs --noEmit -p tsconfig.json",
     "lint:filenames": "ls-lint --config ./configs/ls-lint.yaml",
-    "lint": "oxlint -c configs/oxlint.config.ts",
+    "lint": "pnpm -r run lint",
     "lint:fix": "oxlint -c configs/oxlint.config.ts --fix",
     "dev": "tsx packages/@aglabo/cli/src/cli.ts",
     "build": "pnpm -r run build",
