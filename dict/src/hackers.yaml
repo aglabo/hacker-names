@@ -239,3 +239,13 @@ thomas:
   fullname: David Thomas
   description: "Co-author of The Pragmatic Programmer and Agile Manifesto signatory."
   category: author
+
+
+# --- additonal hackers list ---
+
+msharpe:
+  short: msharpe
+  fullname: Michael Sharpe
+
+alistaircockburn:
+	fullname: alistair cockburn
