@@ -15,6 +15,6 @@
     "test:coverage:functional": "vitest run --coverage --config ./configs/vitest.config.functional.ts",
     "test:coverage:integration": "vitest run --coverage --config ./configs/vitest.config.integration.ts",
     "test:coverage:e2e": "vitest run --coverage --config ./configs/vitest.config.e2e.ts",
-    "sync:configs": "bash ../../../scripts/sync-configs.sh . package"
+    "sync:configs": "pnpm -w run sync:configs"
   }
 }
