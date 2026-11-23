@@ -18,8 +18,8 @@ export default defineConfig({
   // resolve paths from the package directory, not from configs/
   cwd: '..',
   entry: { index: 'src/index.ts', types: 'src/types.ts' },
-  dts: true,
+  dts: { generator: 'tsrs' },
   outDir: 'dist',
   // sibling workspace packages are resolved at runtime; the private types package is bundled in
-  external: [/^@aglabo\/(?!hacker-names-types)/],
+  deps: { neverBundle: [/^@aglabo\/(?!hacker-names-types)/] },
 });
