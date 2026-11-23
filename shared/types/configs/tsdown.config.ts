@@ -1,4 +1,4 @@
-// src: shared/packages/types/configs/tsdown.config.ts
+// src: shared/types/configs/tsdown.config.ts
 // @(#) : tsdown build config for the types package (run from the package directory)
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
@@ -10,7 +10,7 @@
 import { defineConfig } from 'tsdown';
 
 // shared base config
-import { baseConfig } from '../../../../base/configs/tsdown.config.base.ts';
+import { baseConfig } from '../../../base/configs/tsdown.config.base.ts';
 
 // config
 export default defineConfig({

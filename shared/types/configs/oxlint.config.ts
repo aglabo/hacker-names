@@ -1,4 +1,4 @@
-// src: shared/packages/types/configs/oxlint.config.ts
+// src: shared/types/configs/oxlint.config.ts
 // @(#) : oxlint config for the types package (extends the shared base)
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
@@ -7,7 +7,7 @@
 // https://opensource.org/licenses/MIT
 
 // shared base config
-import baseConfig from '../../../../base/configs/oxlint.config.base.ts';
+import baseConfig from '../../../base/configs/oxlint.config.base.ts';
 
 // no package-specific overrides yet
 export default baseConfig;
