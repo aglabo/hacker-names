@@ -1,19 +1,23 @@
-# src: .github/actions/ca-setup-pnpm/action.yml
-# @(#) : composite action to set up pnpm and Node.js, then install dependencies
+# src: .github/actions/ca-setup-tsproject/action.yml
+# @(#) : composite action to set up pnpm and Node.js, install dependencies, and optionally build the workspace
 #
 # Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
 #
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-name: "setup-pnpm"
-description: "Set up pnpm and Node.js with caching, then run pnpm install --frozen-lockfile (the repository must already be checked out)"
+name: "setup-tsproject"
+description: "Set up pnpm and Node.js with caching, run pnpm install --frozen-lockfile, and optionally build the workspace (the repository must already be checked out)"
 
 inputs:
   node-version:
     description: "Node.js version"
     required: false
     default: "24"
+  build:
+    description: "Run pnpm run build after install (workspace packages resolve through dist/)"
+    required: false
+    default: "false"
 
 runs:
   using: composite
@@ -32,3 +36,8 @@ runs:
     - name: install-packages
       shell: bash
       run: pnpm install --frozen-lockfile
+
+    - name: build-packages
+      if: inputs.build == 'true'
+      shell: bash
+      run: pnpm run build
