@@ -1,6 +1,6 @@
 packages:
   - packages/@aglabo/*
-  - shared/packages/*
+  - shared/*
 
 allowBuilds:
   esbuild: false
