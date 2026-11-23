@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "lint:types": "tsrs --noEmit -p tsconfig.json",
-    "sync:configs": "bash ../../../scripts/sync-configs.sh . package",
+    "sync:configs": "pnpm -w run sync:configs",
     "build": "tsdown --config configs/tsdown.config.ts",
     "lint": "oxlint -c configs/oxlint.config.ts",
     "lint:fix": "oxlint -c configs/oxlint.config.ts --fix",

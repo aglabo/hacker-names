@@ -1,4 +1,4 @@
-// src: shared/packages/types/configs/vitest.config.base.ts
+// src: shared/types/configs/vitest.config.base.ts
 // @(#) : vitest config for the types package (shared base only)
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
@@ -7,7 +7,7 @@
 // https://opensource.org/licenses/MIT
 
 // shared base config
-import sharedConfig from '../../../../base/configs/vitest.config.base.ts';
+import sharedConfig from '../../../base/configs/vitest.config.base.ts';
 
 // config
 export default sharedConfig;

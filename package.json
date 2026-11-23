@@ -48,7 +48,8 @@
     "test:coverage:functional": "pnpm -r run test:coverage:functional",
     "test:coverage:integration": "pnpm -r run test:coverage:integration",
     "test:coverage:e2e": "pnpm -r run test:coverage:e2e",
-    "sync:configs": "bash scripts/sync-configs.sh . root"
+    "sync:configs": "pnpm exec tsx scripts/sync-package-scripts.ts",
+    "sync:configs:all": "pnpm -r run sync:configs"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^21.2.4",

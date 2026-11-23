@@ -21,9 +21,9 @@ export default defineConfig({
   // resolve paths from the package directory, not from configs/
   cwd: '..',
   entry: { index: 'src/index.ts' },
-  dts: true,
+  dts: { generator: 'tsrs' },
   outDir: 'dist',
   // sibling workspace packages are resolved at runtime, never inlined
-  external: [/^@aglabo\//],
+  deps: { neverBundle: [/^@aglabo\//] },
   plugins: [pluginYaml],
 });

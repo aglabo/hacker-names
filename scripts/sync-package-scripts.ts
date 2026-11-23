@@ -6,7 +6,10 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 //
-// usage: tsx scripts/sync-package-scripts.ts <target_dir> <package|root> [--dry-run]
+// usage: tsx scripts/sync-package-scripts.ts [target_dir] [--dry-run]
+//   target_dir omitted: the directory pnpm was invoked from (INIT_CWD), else the package.json
+//   that pnpm is running (npm_package_json), else the current directory.
+//   kind is inferred: the repo root uses base-root-scripts.json, anything else base-scripts.json.
 
 // libs
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -16,15 +19,20 @@ import { fileURLToPath } from 'node:url';
 type Scripts = Record<string, string>;
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const templates = { package: 'base-scripts.json', root: 'base-root-scripts.json' } as const;
 
-const [targetDir, kind, flag] = process.argv.slice(2);
-const templateFile = kind === 'package' || kind === 'root' ? templates[kind] : undefined;
-if (!targetDir || !templateFile) {
-  console.error('usage: sync-package-scripts.ts <target_dir> <package|root> [--dry-run]');
-  process.exit(2);
-}
-const dryRun = flag === '--dry-run';
+// pnpm forwards extra args as "--" "<arg>"
+const args = process.argv.slice(2).filter((a) => a !== '--');
+const dryRun = args.includes('--dry-run');
+const positional = args.filter((a) => !a.startsWith('-'));
+
+const inferTargetDir = (): string => {
+  if (positional[0]) { return path.resolve(positional[0]); }
+  if (process.env.INIT_CWD) { return path.resolve(process.env.INIT_CWD); }
+  if (process.env.npm_package_json) { return path.dirname(process.env.npm_package_json); }
+  return process.cwd();
+};
+const targetDir = inferTargetDir();
+const templateFile = path.resolve(targetDir) === repoRoot ? 'base-root-scripts.json' : 'base-scripts.json';
 
 const readJson = (file: string) => JSON.parse(readFileSync(file, 'utf8'));
 const baseScripts: Scripts = readJson(path.join(repoRoot, 'base/configs', templateFile)).scripts;

@@ -21,5 +21,5 @@ export default defineConfig({
   dts: false,
   outDir: 'dist',
   // sibling workspace packages are resolved at runtime, never inlined
-  external: [/^@aglabo\//],
+  deps: { neverBundle: [/^@aglabo\//] },
 });

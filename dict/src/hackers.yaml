@@ -197,6 +197,12 @@ kernighan:
   description: "Co-author of The C Programming Language and the 'K' in AWK."
   category: oss
 
+msharpe:
+  short: msharpe
+  fullname: Michael Sharpe
+  description: "TeX/LaTeX font developer (CTAN: msharpe); maintainer of newtx, newpx, XCharter, and other font packages."
+  category: oss
+
 # --- authors / methodology ---
 fowler:
   short: fowler
@@ -238,4 +244,10 @@ thomas:
   short: dave-thomas
   fullname: David Thomas
   description: "Co-author of The Pragmatic Programmer and Agile Manifesto signatory."
+  category: author
+
+cockburn:
+  short: cockburn
+  fullname: Alistair Cockburn
+  description: "Agile Manifesto co-signatory; creator of the Crystal methodologies and author of Writing Effective Use Cases."
   category: author

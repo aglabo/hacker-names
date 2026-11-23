@@ -1,4 +1,4 @@
-// src: shared/packages/types/configs/vitest.config.unit.ts
+// src: shared/types/configs/vitest.config.unit.ts
 // @(#) : vitest config for unit tests of the types package
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
@@ -7,7 +7,7 @@
 // https://opensource.org/licenses/MIT
 
 // shared package-level factory
-import { definePackageLevel } from '../../../../base/configs/vitest.config.package.ts';
+import { definePackageLevel } from '../../../base/configs/vitest.config.package.ts';
 
 // project config
 import baseConfig from './vitest.config.base.ts';
