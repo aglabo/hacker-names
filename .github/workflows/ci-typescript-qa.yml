@@ -48,8 +48,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup pnpm and install
-        uses: $/.github/actions/ca-setup-pnpm
+      - name: Setup TypeScript project
+        uses: $/.github/actions/ca-setup-tsproject
+        with:
+          # workspace packages resolve through dist/, so build them first
+          build: "true"
 
       - name: Lint (oxlint)
         run: pnpm run lint
@@ -66,8 +69,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup pnpm and install
-        uses: $/.github/actions/ca-setup-pnpm
+      - name: Setup TypeScript project
+        uses: $/.github/actions/ca-setup-tsproject
+        with:
+          # workspace packages resolve through dist/, so build them first
+          build: "true"
 
       - name: Lint types (tsrs)
         run: pnpm run lint:types
@@ -84,8 +90,8 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup pnpm and install
-        uses: $/.github/actions/ca-setup-pnpm
+      - name: Setup TypeScript project
+        uses: $/.github/actions/ca-setup-tsproject
 
       - name: Lint filenames (ls-lint)
         run: pnpm run lint:filenames
@@ -102,8 +108,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup pnpm and install
-        uses: $/.github/actions/ca-setup-pnpm
+      - name: Setup TypeScript project
+        uses: $/.github/actions/ca-setup-tsproject
+        with:
+          # the cli e2e runs dist/cli.mjs, so build first
+          build: "true"
 
       - name: Test
         run: pnpm run test
