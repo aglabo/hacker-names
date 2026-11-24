@@ -8,6 +8,9 @@
 
 import * as v from 'valibot';
 
+export const CATEGORIES = ['turing', 'language', 'oss', 'author', 'historical', 'scientist', 'engineer'] as const;
+export type Category = (typeof CATEGORIES)[number];
+
 export const AdjectivesSchema = v.array(v.pipe(v.string(), v.regex(/^[a-z]+$/)));
 
 // v.record accepts arrays, JSON Schema `type: object` does not: reject them first
@@ -18,7 +21,7 @@ export const HackersSchema = v.pipe(
     v.object({
       fullname: v.string(),
       description: v.string(),
-      category: v.string(),
+      category: v.picklist(CATEGORIES),
     }),
   ),
 );

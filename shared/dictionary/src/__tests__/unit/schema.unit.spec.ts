@@ -8,7 +8,7 @@
 
 import * as v from 'valibot';
 import { describe, expect, test } from 'vitest';
-import { AdjectivesSchema, HackersSchema } from '../../index.ts';
+import { AdjectivesSchema, CATEGORIES, HackersSchema } from '../../index.ts';
 
 describe('AdjectivesSchema', () => {
   test('accepts lowercase words', () => {
@@ -28,5 +28,11 @@ describe('HackersSchema', () => {
   test('rejects an invalid slug or missing field', () => {
     expect(v.safeParse(HackersSchema, { Ken: entry }).success).toBe(false);
     expect(v.safeParse(HackersSchema, { ken: { fullname: 'Ken' } }).success).toBe(false);
+  });
+  test.each(CATEGORIES.map((c) => [c]))('accepts category %s', (category) => {
+    expect(v.safeParse(HackersSchema, { ken: { ...entry, category } }).success).toBe(true);
+  });
+  test('rejects an unknown category', () => {
+    expect(v.safeParse(HackersSchema, { ken: { ...entry, category: 'turign' } }).success).toBe(false);
   });
 });

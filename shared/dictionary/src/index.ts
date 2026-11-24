@@ -6,4 +6,5 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-export { AdjectivesSchema, HackersSchema } from './schema.ts';
+export { AdjectivesSchema, CATEGORIES, HackersSchema } from './schema.ts';
+export type { Category } from './schema.ts';
