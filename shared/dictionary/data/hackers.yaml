@@ -69,6 +69,16 @@ sutherland:
   description: "Creator of Sketchpad and pioneer of computer graphics; 1988 Turing Award."
   category: turing
 
+feigenbaum:
+  fullname: Edward Feigenbaum
+  description: "Father of expert systems and a pioneer of knowledge-based AI; 1994 Turing Award."
+  category: turing
+
+reddy:
+  fullname: Raj Reddy
+  description: "Pioneer of speech recognition and large-scale AI systems; 1994 Turing Award."
+  category: turing
+
 engelbart:
   fullname: Douglas Engelbart
   description: "Inventor of the computer mouse and pioneer of interactive computing; 1997 Turing Award."
