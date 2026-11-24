@@ -95,11 +95,12 @@ pnpm lint && pnpm lint:types
 ## Architecture Overview
 
 pnpm workspace under `packages/@aglabo/` and `shared/packages/`.
-Dependency order: types, dictionary, dict, core, cli.
+Dependency order: types → dictionary → dict → core → cli.
 
 - `shared/packages/types` (`@aglabo/hacker-names-types`, private): `GenerateOptions`.
   Bundled into `core`, exposed as `@aglabo/hacker-names/types`.
-- `shared/dictionary` (`@aglabo/hacker-names-dictionary`): dictionary data (`data/*.yaml`) and valibot schemas only.
+- `shared/dictionary` (`@aglabo/hacker-names-dictionary`): the dictionary package.
+  It holds only the dictionary data (`data/*.yaml`) and the valibot schemas.
 - `dict` (`@aglabo/hacker-names-dict`): `ADJECTIVES` / `HACKERS`.
   Loaded and validated at build time from the dictionary package's YAML (`configs/plugin-yaml.ts`).
 - `core` (`@aglabo/hacker-names`): `generate()` / `VERSION` — the library TypeScript users import

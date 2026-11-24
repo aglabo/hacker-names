@@ -35,9 +35,15 @@ created: "2026-11-23"
 ## 2. Context
 
 - Target Environment: Node.js >=24、ESM のみ、pnpm workspace(`packages/@aglabo/core`)
-- Related Components: `@aglabo/hacker-names-dict`(組み込み辞書、YAML をビルド時に埋め込み。データとスキーマは `@aglabo/hacker-names-dictionary`)、`@aglabo/hacker-names-types`(`GenerateOptions`)、`@aglabo/hacker-names-cli`(将来の利用者)
+- Related Components:
+  - `@aglabo/hacker-names-dict`: 組み込み辞書。YAML をビルド時に埋め込む
+  - `@aglabo/hacker-names-dictionary`: 辞書のデータとスキーマ
+  - `@aglabo/hacker-names-types`: `GenerateOptions`
+  - `@aglabo/hacker-names-cli`: 将来の利用者
 - Assumptions:
-  - 組み込み辞書は現状の YAML 形式(`adjectives.yaml` は単語配列、`hackers.yaml` は `slug` をキーとし、`fullname` / `description` / `category` を持つレコードの map)である。
+  - 組み込み辞書は現状の YAML 形式である。
+    `adjectives.yaml` は単語配列である。
+    `hackers.yaml` は `slug` をキーとする map で、各レコードは `fullname` / `description` / `category` を持つ。
     指定辞書の形式は REQ-C-002 と Open Questions で定める
   - 現状の `@aglabo/hacker-names` は v0.0.1 で未公開である
   - 公開関数名 `createDictionary` は仮名である。確定は実装時(impl)に行う
@@ -158,7 +164,7 @@ THEN the system SHALL fail initialization with an error whose class identifies t
   and SHALL NOT ignore the specification or fall back to the built-in dictionary.
 ```
 
-**Rationale**: 指定を無視して別の辞書で生成すると利用者が気づけない。エラー種別は呼び出し側が判別できる必要がある(ヒアリング Q3)。
+**Rationale**: 指定を無視して別の辞書で生成すると、利用者は気づけない。呼び出し側は、エラー種別を判別できなければならない(ヒアリング Q3)。
 
 **Acceptance Criteria**:
 
