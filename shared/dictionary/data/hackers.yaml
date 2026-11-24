@@ -211,3 +211,106 @@ cockburn:
   fullname: Alistair Cockburn
   description: "Agile Manifesto co-signatory; creator of the Crystal methodologies and author of Writing Effective Use Cases."
   category: author
+
+# --- historical figures ---
+ada-lovelace:
+  fullname: Ada Lovelace
+  description: "Wrote the first published algorithm for Babbage's Analytical Engine, often called the first programmer."
+  category: historical
+
+babbage:
+  fullname: Charles Babbage
+  description: "Designer of the Difference Engine and the Analytical Engine, early mechanical computers."
+  category: historical
+
+leibniz:
+  fullname: Gottfried Wilhelm Leibniz
+  description: "Mathematician who formalized the binary number system and built an early mechanical calculator."
+  category: historical
+
+boole:
+  fullname: George Boole
+  description: "Creator of Boolean algebra, the foundation of digital logic."
+  category: historical
+
+jacquard:
+  fullname: Joseph Marie Jacquard
+  description: "Inventor of the punched-card programmable loom that inspired early computing."
+  category: historical
+
+hollerith:
+  fullname: Herman Hollerith
+  description: "Inventor of the punched-card tabulating machine and a founder of the company that became IBM."
+  category: historical
+
+# --- computer scientists / mathematicians ---
+alan-turing:
+  fullname: Alan Turing
+  description: "Father of theoretical computer science; defined the Turing machine and the Turing test."
+  category: scientist
+
+von-neumann:
+  fullname: John von Neumann
+  description: "Mathematician behind the stored-program von Neumann architecture and early game theory."
+  category: scientist
+
+claude-shannon:
+  fullname: Claude Shannon
+  description: "Founder of information theory and author of A Mathematical Theory of Communication."
+  category: scientist
+
+godel:
+  fullname: Kurt Gödel
+  description: "Logician known for the incompleteness theorems that shaped computability theory."
+  category: scientist
+
+church:
+  fullname: Alonzo Church
+  description: "Creator of the lambda calculus and co-author of the Church-Turing thesis."
+  category: scientist
+
+grace-hopper:
+  fullname: Grace Hopper
+  description: "Pioneer of compilers and the COBOL language; popularized the term 'debugging'."
+  category: scientist
+
+john-mccarthy:
+  fullname: John McCarthy
+  description: "Creator of Lisp and coiner of the term 'artificial intelligence'; 1971 Turing Award."
+  category: scientist
+
+norbert-wiener:
+  fullname: Norbert Wiener
+  description: "Mathematician who founded cybernetics."
+  category: scientist
+
+# --- engineers ---
+wozniak:
+  fullname: Steve Wozniak
+  description: "Designer of the Apple I and Apple II and co-founder of Apple."
+  category: engineer
+
+carmack:
+  fullname: John Carmack
+  description: "Game engine programmer behind Doom and Quake and co-founder of id Software."
+  category: engineer
+
+jeff-dean:
+  fullname: Jeff Dean
+  description: "Google engineer behind MapReduce, Bigtable and TensorFlow."
+  category: engineer
+
+brendan-eich:
+  fullname: Brendan Eich
+  description: "Creator of JavaScript and co-founder of Mozilla and Brave."
+  category: engineer
+
+dhh:
+  fullname: David Heinemeier Hansson
+  description: "Creator of Ruby on Rails and co-founder of 37signals."
+  category: engineer
+
+ryan-dahl:
+  fullname: Ryan Dahl
+  description: "Creator of Node.js and Deno."
+  category: engineer
