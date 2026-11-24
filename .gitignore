@@ -121,10 +121,6 @@
 !/packages/
 !/packages/**
 
-# dictionaries (yaml source + generated txt)
-!/dict/
-!/dict/**
-
 # source (tests live in src/**/__tests__/{unit,functional,integration,e2e})
 !/src/
 !/src/**

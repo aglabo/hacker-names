@@ -1,5 +1,5 @@
 // src: packages/@aglabo/dict/src/index.ts
-// @(#) : public entry of the dictionary package
+// @(#) : public entry of the dict package
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
 //

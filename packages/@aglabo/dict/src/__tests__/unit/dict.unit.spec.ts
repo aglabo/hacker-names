@@ -20,7 +20,7 @@ describe('dictionaries', () => {
     expect(new Set(ADJECTIVES).size).toBe(ADJECTIVES.length);
     expect(new Set(HACKERS).size).toBe(HACKERS.length);
   });
-  test('use the short field of hackers.yaml as the hacker word', () => {
+  test('use the slug field of hackers.yaml as the hacker word', () => {
     expect(HACKERS).toContain('knuth');
     expect(HACKERS).toContain('ken-thompson');
   });

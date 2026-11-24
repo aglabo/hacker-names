@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/atsushifx/hacker-names/schema/hackers.schema.json",
+  "title": "hackers",
+  "description": "Map from slug to hacker entry. Source of truth; keep src/schema.ts (valibot) in sync. Slug uniqueness is guaranteed by YAML map keys (parsers reject duplicate keys).",
+  "type": "object",
+  "propertyNames": { "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+  "additionalProperties": {
+    "type": "object",
+    "required": ["fullname", "description", "category"],
+    "properties": {
+      "fullname": { "type": "string" },
+      "description": { "type": "string" },
+      "category": {
+        "type": "string",
+        "enum": ["turing", "language", "oss", "author", "historical", "scientist", "engineer"]
+      }
+    }
+  }
+}

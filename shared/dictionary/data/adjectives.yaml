@@ -1,4 +1,4 @@
-# src: dict/src/adjectives.yaml
+# src: shared/dictionary/data/adjectives.yaml
 # @(#) : adjective source for hacker-names (single lowercase word, [a-z]+)
 #
 # Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
@@ -77,3 +77,65 @@
 - wild
 - wise
 - young
+- floppy
+- fluffy
+- fuzzy
+- squishy
+- bouncy
+- wobbly
+- jiggly
+- wiggly
+- sparkly
+- bubbly
+- snuggly
+- cuddly
+- cozy
+- giggly
+- sleepy
+- sunny
+- snowy
+- rainy
+- breezy
+- fizzy
+- crunchy
+- gooey
+- sticky
+- bumpy
+- dizzy
+- zippy
+- peppy
+- perky
+- jolly
+- merry
+- cheery
+- happy
+- jumpy
+- shiny
+- glittery
+- twinkly
+- dreamy
+- wacky
+- zany
+- quirky
+- chirpy
+- snappy
+- speedy
+- nifty
+- dandy
+- puffy
+- poofy
+- fluttery
+- rumbly
+- tickly
+- twirly
+- cheerful
+- dainty
+- frisky
+- spunky
+- plucky
+- bright
+- sweet
+- gentle
+- cute
+- funny
+- lively

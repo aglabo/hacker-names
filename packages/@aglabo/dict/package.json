@@ -33,5 +33,8 @@
     "test:coverage:e2e": "vitest run --coverage --config ./configs/vitest.config.e2e.ts",
     "test:e2e": "vitest run --config ./configs/vitest.config.e2e.ts",
     "clean:dist": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@aglabo/hacker-names-dictionary": "workspace:*"
   }
 }

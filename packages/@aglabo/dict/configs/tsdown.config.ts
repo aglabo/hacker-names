@@ -23,7 +23,7 @@ export default defineConfig({
   entry: { index: 'src/index.ts' },
   dts: { generator: 'tsrs' },
   outDir: 'dist',
-  // sibling workspace packages are resolved at runtime, never inlined
-  deps: { neverBundle: [/^@aglabo\//] },
+  // sibling workspace packages are resolved at runtime, never inlined (except the dictionary data and schemas)
+  deps: { neverBundle: [/^@aglabo\/(?!hacker-names-dictionary)/] },
   plugins: [pluginYaml],
 });
