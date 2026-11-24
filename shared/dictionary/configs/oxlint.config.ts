@@ -1,5 +1,5 @@
-// src: packages/@aglabo/dict/configs/oxlint.config.ts
-// @(#) : oxlint config for the dict package (extends the shared base)
+// src: shared/dictionary/configs/oxlint.config.ts
+// @(#) : oxlint config for the dictionary package (extends the shared base)
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
 //
@@ -7,7 +7,7 @@
 // https://opensource.org/licenses/MIT
 
 // shared base config
-import baseConfig from '../../../../base/configs/oxlint.config.base.ts';
+import baseConfig from '../../../base/configs/oxlint.config.base.ts';
 
 // no package-specific overrides yet
 export default baseConfig;

@@ -1,4 +1,4 @@
-// src: packages/@aglabo/dict/configs/vitest.config.functional.ts
+// src: shared/dictionary/configs/vitest.config.functional.ts
 // @(#) : vitest config for functional tests of the dict package
 //
 // Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
@@ -7,7 +7,7 @@
 // https://opensource.org/licenses/MIT
 
 // shared package-level factory
-import { definePackageLevel } from '../../../../base/configs/vitest.config.package.ts';
+import { definePackageLevel } from '../../../base/configs/vitest.config.package.ts';
 
 // project config
 import baseConfig from './vitest.config.base.ts';
