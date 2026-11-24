@@ -8,10 +8,20 @@
 #
 # key: output word (slug), lowercase [a-z0-9] groups joined by "-"; YAML parsers reject duplicate keys
 
-# --- core: turing award / CS pioneers ---
-knuth:
-  fullname: Donald E. Knuth
-  description: "Author of The Art of Computer Programming and creator of TeX; 1974 Turing Award."
+# --- core: turing award winners (sorted by award year) ---
+hamming:
+  fullname: Richard Hamming
+  description: "Inventor of Hamming codes for error correction; 1968 Turing Award."
+  category: turing
+
+minsky:
+  fullname: Marvin Minsky
+  description: "Artificial intelligence pioneer and co-founder of the MIT AI Lab; 1969 Turing Award."
+  category: turing
+
+john-mccarthy:
+  fullname: John McCarthy
+  description: "Creator of Lisp and coiner of the term 'artificial intelligence'; 1971 Turing Award."
   category: turing
 
 dijkstra:
@@ -19,9 +29,24 @@ dijkstra:
   description: "Pioneer of structured programming and the shortest-path algorithm; 1972 Turing Award."
   category: turing
 
-lamport:
-  fullname: Leslie Lamport
-  description: "Distributed-systems theorist behind Lamport clocks and Paxos, and creator of LaTeX; 2013 Turing Award."
+knuth:
+  fullname: Donald E. Knuth
+  description: "Author of The Art of Computer Programming and creator of TeX; 1974 Turing Award."
+  category: turing
+
+backus:
+  fullname: John Backus
+  description: "Creator of FORTRAN and the Backus-Naur form; 1977 Turing Award."
+  category: turing
+
+tony-hoare:
+  fullname: Tony Hoare
+  description: "Inventor of quicksort, Hoare logic and CSP; 1980 Turing Award."
+  category: turing
+
+codd:
+  fullname: Edgar F. Codd
+  description: "Inventor of the relational model of databases; 1981 Turing Award."
   category: turing
 
 ritchie:
@@ -34,14 +59,79 @@ ken-thompson:
   description: "Co-creator of Unix, creator of the B language and co-designer of Go; 1983 Turing Award."
   category: turing
 
-tony-hoare:
-  fullname: Tony Hoare
-  description: "Inventor of quicksort, Hoare logic and CSP; 1980 Turing Award."
+wirth:
+  fullname: Niklaus Wirth
+  description: "Designer of Pascal, Modula-2 and Oberon; 1984 Turing Award."
+  category: turing
+
+sutherland:
+  fullname: Ivan Sutherland
+  description: "Creator of Sketchpad and pioneer of computer graphics; 1988 Turing Award."
+  category: turing
+
+engelbart:
+  fullname: Douglas Engelbart
+  description: "Inventor of the computer mouse and pioneer of interactive computing; 1997 Turing Award."
+  category: turing
+
+brooks:
+  fullname: Fred Brooks
+  description: "Architect of IBM System/360 and author of The Mythical Man-Month; 1999 Turing Award."
+  category: turing
+
+rivest:
+  fullname: Ron Rivest
+  description: "Co-inventor of the RSA cryptosystem; 2002 Turing Award."
+  category: turing
+
+shamir:
+  fullname: Adi Shamir
+  description: "Co-inventor of the RSA cryptosystem; 2002 Turing Award."
+  category: turing
+
+adleman:
+  fullname: Leonard Adleman
+  description: "Co-inventor of the RSA cryptosystem; 2002 Turing Award."
+  category: turing
+
+alan-kay:
+  fullname: Alan Kay
+  description: "Smalltalk pioneer who shaped object-oriented programming; 2003 Turing Award."
   category: turing
 
 vint-cerf:
   fullname: Vinton Cerf
   description: "Co-designer of TCP/IP, often called a father of the Internet; 2004 Turing Award."
+  category: turing
+
+bob-kahn:
+  fullname: Robert Kahn
+  description: "Co-designer of TCP/IP; 2004 Turing Award."
+  category: turing
+
+liskov:
+  fullname: Barbara Liskov
+  description: "Creator of the CLU language and the Liskov substitution principle; 2008 Turing Award."
+  category: turing
+
+lamport:
+  fullname: Leslie Lamport
+  description: "Distributed-systems theorist behind Lamport clocks and Paxos, and creator of LaTeX; 2013 Turing Award."
+  category: turing
+
+stonebraker:
+  fullname: Michael Stonebraker
+  description: "Database pioneer behind Ingres and Postgres; 2014 Turing Award."
+  category: turing
+
+diffie:
+  fullname: Whitfield Diffie
+  description: "Co-inventor of public-key cryptography and Diffie-Hellman key exchange; 2015 Turing Award."
+  category: turing
+
+hellman:
+  fullname: Martin Hellman
+  description: "Co-inventor of public-key cryptography and Diffie-Hellman key exchange; 2015 Turing Award."
   category: turing
 
 tim-berners-lee:
@@ -59,6 +149,21 @@ hennessy:
   description: "RISC pioneer (MIPS) and co-author of the Computer Architecture textbook; 2017 Turing Award."
   category: turing
 
+hinton:
+  fullname: Geoffrey Hinton
+  description: "Pioneer of backpropagation and deep neural networks; 2018 Turing Award."
+  category: turing
+
+lecun:
+  fullname: Yann LeCun
+  description: "Inventor of convolutional neural networks; 2018 Turing Award."
+  category: turing
+
+catmull:
+  fullname: Edwin Catmull
+  description: "Pioneer of 3D computer graphics and co-founder of Pixar; 2019 Turing Award."
+  category: turing
+
 aho:
   fullname: Alfred Aho
   description: "Co-author of the 'Dragon Book' on compilers and co-creator of AWK; 2020 Turing Award."
@@ -69,24 +174,9 @@ ullman:
   description: "Co-author of the 'Dragon Book' and classic automata and database textbooks; 2020 Turing Award."
   category: turing
 
-liskov:
-  fullname: Barbara Liskov
-  description: "Creator of the CLU language and the Liskov substitution principle; 2008 Turing Award."
-  category: turing
-
-stonebraker:
-  fullname: Michael Stonebraker
-  description: "Database pioneer behind Ingres and Postgres; 2014 Turing Award."
-  category: turing
-
-diffie:
-  fullname: Whitfield Diffie
-  description: "Co-inventor of public-key cryptography and Diffie-Hellman key exchange; 2015 Turing Award."
-  category: turing
-
-hellman:
-  fullname: Martin Hellman
-  description: "Co-inventor of public-key cryptography and Diffie-Hellman key exchange; 2015 Turing Award."
+metcalfe:
+  fullname: Robert Metcalfe
+  description: "Inventor of Ethernet and founder of 3Com; 2022 Turing Award."
   category: turing
 
 # --- programming language designers ---
@@ -105,11 +195,6 @@ stroustrup:
   description: "Creator of the C++ programming language."
   category: language
 
-wirth:
-  fullname: Niklaus Wirth
-  description: "Designer of Pascal, Modula-2 and Oberon; 1984 Turing Award."
-  category: language
-
 larry-wall:
   fullname: Larry Wall
   description: "Creator of the Perl programming language."
@@ -118,11 +203,6 @@ larry-wall:
 gosling:
   fullname: James Gosling
   description: "Lead designer of the Java programming language."
-  category: language
-
-alan-kay:
-  fullname: Alan Kay
-  description: "Smalltalk pioneer who shaped object-oriented programming; 2003 Turing Award."
   category: language
 
 odersky:
@@ -269,19 +349,19 @@ church:
   description: "Creator of the lambda calculus and co-author of the Church-Turing thesis."
   category: scientist
 
-grace-hopper:
+amazing-grace:
   fullname: Grace Hopper
-  description: "Pioneer of compilers and the COBOL language; popularized the term 'debugging'."
-  category: scientist
-
-john-mccarthy:
-  fullname: John McCarthy
-  description: "Creator of Lisp and coiner of the term 'artificial intelligence'; 1971 Turing Award."
+  description: "Known as 'Amazing Grace'; pioneer of compilers and the COBOL language, and popularizer of the term 'debugging'."
   category: scientist
 
 norbert-wiener:
   fullname: Norbert Wiener
   description: "Mathematician who founded cybernetics."
+  category: scientist
+
+negroponte:
+  fullname: Nicholas Negroponte
+  description: "Co-founder of the MIT Media Lab and founder of One Laptop per Child."
   category: scientist
 
 # --- engineers ---
@@ -313,4 +393,9 @@ dhh:
 ryan-dahl:
   fullname: Ryan Dahl
   description: "Creator of Node.js and Deno."
+  category: engineer
+
+steve-russell:
+  fullname: Steve Russell
+  description: "Creator of Spacewar!, one of the first video games, and implementer of the first Lisp interpreter."
   category: engineer
