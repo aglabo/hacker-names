@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/atsushifx/hacker-names/schema/adjectives.schema.json",
+  "title": "adjectives",
+  "description": "List of unique lowercase adjectives. Source of truth; keep src/schema.ts (valibot) in sync.",
+  "type": "array",
+  "uniqueItems": true,
+  "items": { "type": "string", "pattern": "^[a-z]+$" }
+}

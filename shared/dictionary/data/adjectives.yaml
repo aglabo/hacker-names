@@ -1,0 +1,79 @@
+# src: shared/dictionary/data/adjectives.yaml
+# @(#) : adjective source for hacker-names (single lowercase word, [a-z]+)
+#
+# Copyright (c) 2025- atsushifx <https://github.com/atsushifx>
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+#
+- ancient
+- bold
+- brave
+- calm
+- clear
+- cool
+- dark
+- deep
+- dire
+- dusty
+- early
+- fair
+- fast
+- firm
+- free
+- full
+- good
+- grand
+- great
+- grim
+- hard
+- high
+- keen
+- kind
+- late
+- lazy
+- lean
+- light
+- lone
+- lost
+- mild
+- neat
+- nice
+- noble
+- odd
+- pale
+- plain
+- proud
+- pure
+- quiet
+- rare
+- rich
+- rough
+- round
+- safe
+- sharp
+- short
+- shy
+- slim
+- slow
+- smart
+- soft
+- solid
+- stark
+- stern
+- still
+- stone
+- swift
+- tall
+- tame
+- thin
+- tiny
+- tidy
+- tough
+- "true"
+- vast
+- warm
+- wide
+- wild
+- wise
+- young

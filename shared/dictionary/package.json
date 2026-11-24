@@ -1,0 +1,40 @@
+{
+  "name": "@aglabo/hacker-names-dict",
+  "version": "0.0.1",
+  "description": "hacker and adjective dictionaries built from YAML",
+  "license": "MIT",
+  "author": "atsushifx",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint:types": "tsrs --noEmit -p tsconfig.json",
+    "sync:configs": "pnpm -w run sync:configs",
+    "build": "tsdown --config configs/tsdown.config.ts",
+    "lint": "oxlint -c configs/oxlint.config.ts",
+    "lint:fix": "oxlint -c configs/oxlint.config.ts --fix",
+    "test": "pnpm run test:unit && pnpm run test:functional && pnpm run test:integration && pnpm run test:e2e",
+    "test:unit": "vitest run --config ./configs/vitest.config.unit.ts",
+    "test:unit:watch": "vitest --config ./configs/vitest.config.unit.ts",
+    "test:functional": "vitest run --config ./configs/vitest.config.functional.ts",
+    "test:integration": "vitest run --config ./configs/vitest.config.integration.ts",
+    "test:coverage:unit": "vitest run --coverage --config ./configs/vitest.config.unit.ts",
+    "test:coverage:functional": "vitest run --coverage --config ./configs/vitest.config.functional.ts",
+    "test:coverage:integration": "vitest run --coverage --config ./configs/vitest.config.integration.ts",
+    "test:coverage:e2e": "vitest run --coverage --config ./configs/vitest.config.e2e.ts",
+    "test:e2e": "vitest run --config ./configs/vitest.config.e2e.ts",
+    "clean:dist": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@aglabo/hacker-names-dictionary": "workspace:*"
+  }
+}
