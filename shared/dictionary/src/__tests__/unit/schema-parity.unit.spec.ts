@@ -9,8 +9,8 @@
 import { Ajv2020 } from 'ajv/dist/2020.js';
 import { readFileSync } from 'node:fs';
 import * as v from 'valibot';
-import { parse } from 'yaml';
 import { describe, expect, test } from 'vitest';
+import { parse } from 'yaml';
 import { AdjectivesSchema, CATEGORIES, HackersSchema } from '../../index.ts';
 
 const root = new URL('../../../', import.meta.url);
