@@ -11,7 +11,10 @@
     "properties": {
       "fullname": { "type": "string" },
       "description": { "type": "string" },
-      "category": { "type": "string" }
+      "category": {
+        "type": "string",
+        "enum": ["turing", "language", "oss", "author", "historical", "scientist", "engineer"]
+      }
     }
   }
 }
