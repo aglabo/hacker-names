@@ -1,9 +1,9 @@
-// src: packages/@aglabo/dict/src/index.ts
-// @(#) : public entry of the dict package
+// src: shared/dictionary/src/index.ts
+// @(#) : public entry of the dictionary package (valibot schemas)
 //
 // Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
 //
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-export { ADJECTIVES, HACKERS } from './dict.ts';
+export { AdjectivesSchema, HackersSchema } from './schema.ts';
